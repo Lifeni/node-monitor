@@ -10,7 +10,8 @@
     "start": "ts-node ./app.ts",
     "dev": "nodemon ./app.ts",
     "build": "esbuild ./app.ts --bundle --platform=node --outfile=./dist/bundle/client.js --minify",
-    "build:linux": "npm run build && pkg ."
+    "build:linux": "npm run build && pkg .",
+    "check": "tsc --noEmit"
   },
   "pkg": {
     "scripts": "./dist/bundle/client.js",
