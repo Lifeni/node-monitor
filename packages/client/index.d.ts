@@ -1,0 +1,2 @@
+interface ISystemInfo {}
+interface ISystemLoad {}

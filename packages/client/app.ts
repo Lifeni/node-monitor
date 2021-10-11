@@ -1,9 +1,7 @@
-import { collect } from './collect'
+import { connectToServer } from './post'
 
-collect()
-  .then(data => {
-    console.log(data)
-  })
-  .catch(err => {
-    console.log(err)
-  })
+const startApp = async () => {
+  await connectToServer()
+}
+
+startApp()

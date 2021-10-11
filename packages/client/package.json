@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "负责收集系统信息的客户端。",
   "main": "app.ts",
+  "types": "index.d.ts",
   "author": "LFN <liangfengning@foxmail.com>",
   "license": "MIT",
   "bin": "./dist/bundle/client.js",
   "scripts": {
-    "start": "ts-node ./app.ts",
+    "start": "ts-node --files ./app.ts",
     "dev": "nodemon ./app.ts",
     "build": "esbuild ./app.ts --bundle --platform=node --outfile=./dist/bundle/client.js --minify",
     "build:docker": "npm run build && docker build -t collector/client .",
@@ -23,9 +24,12 @@
   },
   "dependencies": {
     "socket.io-client": "^4.2.0",
-    "systeminformation": "^5.9.7"
+    "systeminformation": "^5.9.7",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/node": "^16.10.3",
+    "@types/uuid": "^8.3.1",
     "esbuild": "^0.13.4",
     "nodemon": "^2.0.13",
     "pkg": "^5.3.3",

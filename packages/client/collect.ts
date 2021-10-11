@@ -1,9 +1,8 @@
 import { cpu, system } from 'systeminformation'
 
-export const collect = async () => {
+export const collectSystemInfo = async () => {
   try {
     const info = {
-      cpu: await cpu(),
       system: await system(),
     }
     return info
@@ -11,3 +10,5 @@ export const collect = async () => {
     console.log(err)
   }
 }
+
+export const collectSystemLoad = async () => {}
