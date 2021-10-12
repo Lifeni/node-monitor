@@ -13,22 +13,27 @@ const getId = () => {
 
 const UUID = getId()
 
-/** 声明 socket.io 实例，取消自动连接 */
+/** 声明 socket.io 实例 */
 const socket = io(WS_URL, { autoConnect: false })
 
 /** 与服务器建立连接，输出日志 */
-socket.on('connect', () => {
-  console.log(`[INFO] (socket-io) 已连接到 ${WS_URL}`)
-})
+socket.on('connect', () => console.log(`[INFO] (socket-io) 已连接到 ${WS_URL}`))
 
 /**
- * 与服务器断开连接，输出日志并退出程序，
+ * 与服务器连接失败，输出日志
+ * 参考事件：https://socket.io/docs/v4/client-socket-instance/#connect_error
+ */
+socket.on('connect_error', () =>
+  console.log(`[ERROR] (socket-io) 连接到 ${WS_URL} 时出现错误`)
+)
+
+/**
+ * 与服务器断开连接，输出日志
  * 参考事件：https://socket.io/docs/v4/client-api/#event-disconnect
  */
-socket.on('disconnect', reason => {
+socket.on('disconnect', reason =>
   console.log(`[INFO] (socket-io) 已断开连接 (${reason})`)
-  process.exitCode = 1
-})
+)
 
 /** 尝试与服务器建立连接 */
 export const connectToServer = async () => {

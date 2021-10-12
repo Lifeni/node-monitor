@@ -1,9 +1,11 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/lodash': ^4.14.175
   '@types/node': ^16.10.3
   '@types/uuid': ^8.3.1
   esbuild: ^0.13.4
+  lodash: ^4.17.21
   nodemon: ^2.0.13
   pkg: ^5.3.3
   prettier: ^2.4.1
@@ -14,11 +16,13 @@ specifiers:
   uuid: ^8.3.2
 
 dependencies:
+  lodash: 4.17.21
   socket.io-client: 4.2.0
   systeminformation: 5.9.7
   uuid: 8.3.2
 
 devDependencies:
+  '@types/lodash': 4.14.175
   '@types/node': 16.10.3
   '@types/uuid': 8.3.1
   esbuild: 0.13.4
@@ -113,6 +117,10 @@ packages:
   /@types/component-emitter/1.2.10:
     resolution: {integrity: sha512-bsjleuRKWmGqajMerkzox19aGbscQX5rmmvvXl3wlIp5gMG1HgkiwPxsN5p070fBDKTNSPgojVbuY1+HWMbFhg==}
     dev: false
+
+  /@types/lodash/4.14.175:
+    resolution: {integrity: sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==}
+    dev: true
 
   /@types/node/16.10.3:
     resolution: {integrity: sha512-ho3Ruq+fFnBrZhUYI46n/bV2GjwzSkwuT4dTf0GkuNFmnb8nq4ny2z9JEVemFi6bdEJanHLlYfy9c6FN9B9McQ==}
@@ -1053,7 +1061,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /lowercase-keys/1.0.1:
     resolution: {integrity: sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0JTG4icfZQH+xPyh8VA==}
