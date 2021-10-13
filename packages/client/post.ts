@@ -9,7 +9,7 @@ const WS_URL = process.env.WS_URL || 'ws://localhost:9010'
 /** 从环境变量中获取 ID，如果没有就临时生成 */
 const getId = () => {
   const id = process.env.ID || uuidv4()
-  log('uuid', `设备 ID ${id} ${process.env.ID || '(临时)'}`)
+  log('uuid', `设备 ID ${id} ${process.env.ID ? '' : '(临时)'}`)
   return id
 }
 
