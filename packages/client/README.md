@@ -2,6 +2,8 @@
 
 一个负责收集系统信息的客户端。
 
+## 用的技术
+
 程序依赖：
 
 - [**socketio/socket.io**: Realtime application framework (Node.JS server)](https://github.com/socketio/socket.io)
@@ -20,3 +22,11 @@
 
 - [**evanw/esbuild**: An extremely fast JavaScript bundler and minifier](https://github.com/evanw/esbuild)
 - [**vercel/pkg**: Package your Node.js project into an executable](https://github.com/vercel/pkg)
+
+## 环境变量
+
+| env        | 用处                  | 默认值                |
+| ---------- | --------------------- | --------------------- |
+| `ID`       | 客户端 ID             | 随机生成的 UUID       |
+| `WS_URL`   | 服务器 WebSocket 地址 | `ws://localhost:9010` |
+| `INTERVAL` | 负载数据收集间隔时间  | `5` （单位为秒）      |
