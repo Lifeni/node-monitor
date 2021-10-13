@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "负责将不同客户端的数据收集并存入数据库的服务端。",
+  "main": "app.ts",
+  "types": "index.d.ts",
+  "author": "LFN <liangfengning@foxmail.com>",
+  "license": "MIT",
+  "bin": "./dist/bundle/server.js",
+  "scripts": {
+    "start": "ts-node --files ./app.ts",
+    "dev": "nodemon --exec \"ts-node --files ./app.ts\"",
+    "build": "esbuild ./app.ts --bundle --platform=node --outfile=./dist/bundle/server.js --minify",
+    "build:docker": "npm run build && docker build -t collector/server .",
+    "build:linux": "npm run build && pkg .",
+    "check": "tsc --noEmit"
+  },
+  "pkg": {
+    "scripts": "./dist/bundle/server.js",
+    "targets": [
+      "node16-linux"
+    ],
+    "outputPath": "./dist/app"
+  },
+  "dependencies": {
+    "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.5",
+    "esbuild": "^0.13.5",
+    "nodemon": "^2.0.13",
+    "pkg": "^5.3.3",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4"
+  }
+}

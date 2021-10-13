@@ -1,0 +1,3 @@
+const startApp = async () => {}
+
+startApp()
