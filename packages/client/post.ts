@@ -62,24 +62,20 @@ socket.on('connect_error', err => {
 socket.on('disconnect', reason => log('socket-io', `已断开连接 (${reason})`))
 
 export const postSystemInfo = async () => {
-  if (socket.connected) {
-    const info = await collectSystemInfo()
-    if (info) {
-      const time = new Date().getTime()
-      socket.emit('system-info', { id: UUID, time, info })
-      log('system-info', `发送系统信息数据 (${time})`)
-    }
+  const info = await collectSystemInfo()
+  if (info) {
+    const time = new Date().getTime()
+    socket.emit('system-info', { id: UUID, time, info })
+    log('system-info', `发送系统信息数据 (${time})`)
   }
 }
 
 export const postSystemLoad = async () => {
-  if (socket.connected) {
-    const load = await collectSystemLoad()
-    if (load) {
-      const time = new Date().getTime()
-      socket.emit('system-load', { id: UUID, time, load })
-      log('system-load', `发送系统负载数据 (${time})`)
-    }
+  const load = await collectSystemLoad()
+  if (load) {
+    const time = new Date().getTime()
+    socket.emit('system-load', { id: UUID, time, load })
+    log('system-load', `发送系统负载数据 (${time})`)
   }
 }
 

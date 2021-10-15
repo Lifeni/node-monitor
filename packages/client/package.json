@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "负责收集系统信息的客户端",
   "main": "client.ts",
-  "types": "index.d.ts",
+  "types": "types.d.ts",
   "author": "LFN <liangfengning@foxmail.com>",
   "license": "MIT",
   "bin": "./dist/bundle/client.js",

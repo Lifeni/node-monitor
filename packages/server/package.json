@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "负责将不同客户端的数据收集并存入数据库的服务端",
   "main": "server.ts",
-  "types": "index.d.ts",
+  "types": "types.d.ts",
   "author": "LFN <liangfengning@foxmail.com>",
   "license": "MIT",
   "bin": "./dist/bundle/server.js",
@@ -13,7 +13,8 @@
     "build": "esbuild ./server.ts --bundle --platform=node --outfile=./dist/bundle/server.js --minify",
     "build:docker": "npm run build && docker build -t collector-server .",
     "build:linux": "npm run build && pkg .",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "prisma": "pnpx prisma generate"
   },
   "pkg": {
     "scripts": "./dist/bundle/server.js",
@@ -23,8 +24,11 @@
     "outputPath": "./dist/app"
   },
   "dependencies": {
-    "@influxdata/influxdb-client": "^1.18.0",
+    "@prisma/client": "^3.2.1",
     "h3": "^0.3.1",
     "socket.io": "^4.2.0"
+  },
+  "devDependencies": {
+    "prisma": "^3.2.1"
   }
 }

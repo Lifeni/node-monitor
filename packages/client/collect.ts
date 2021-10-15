@@ -41,7 +41,7 @@ export const collectSystemLoad = async (): Promise<ISystemLoad | undefined> => {
 
     return {
       load: data.currentLoad.currentLoad,
-      cpu: data.currentLoad.cpus.map((cpu: CpuLoadData) => pick(cpu, ['load'])),
+      cpu: data.currentLoad.cpus.map((cpu: CpuLoadData) => cpu.load),
       memory: data.mem,
     }
   } catch (err) {

@@ -1,0 +1,101 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+model SystemInfo {
+  id       String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  name     String    @unique
+  time     BigInt    @unique
+  system   System    @relation(fields: [systemId], references: [id])
+  os       Os        @relation(fields: [osId], references: [id])
+  cpu      Cpu       @relation(fields: [cpuId], references: [id])
+  network  Network[]
+  disk     Disk[]
+  systemId String    @unique @db.ObjectId
+  osId     String    @unique @db.ObjectId
+  cpuId    String    @unique @db.ObjectId
+}
+
+model System {
+  id           String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  manufacturer String
+  model        String
+  version      String
+  virtual      Boolean
+  SystemInfo   SystemInfo?
+}
+
+model Os {
+  id         String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  platform   String
+  distro     String
+  release    String
+  arch       String
+  hostname   String
+  SystemInfo SystemInfo?
+}
+
+model Cpu {
+  id            String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  manufacturer  String
+  brand         String
+  speed         Decimal
+  cores         Int
+  physicalCores Int
+  processors    Int
+  SystemInfo    SystemInfo?
+}
+
+model Network {
+  id           String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  iface        String
+  ip4          String
+  ip6          String
+  mac          String
+  SystemInfo   SystemInfo? @relation(fields: [systemInfoId], references: [id])
+  systemInfoId String?     @db.ObjectId
+}
+
+model Disk {
+  id           String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  fs           String
+  size         BigInt
+  used         BigInt
+  available    BigInt
+  use          Decimal
+  mount        String
+  SystemInfo   SystemInfo? @relation(fields: [systemInfoId], references: [id])
+  systemInfoId String?     @db.ObjectId
+}
+
+model SystemLoad {
+  id       String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  name     String
+  time     BigInt    @unique
+  load     Decimal
+  cpu      Decimal[] @db.Array(Decimal)
+  memory   Memory    @relation(fields: [memoryId], references: [id])
+  memoryId String    @unique @db.ObjectId
+}
+
+model Memory {
+  id         String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  total      BigInt
+  free       BigInt
+  used       BigInt
+  available  BigInt
+  swaptotal  BigInt
+  swapused   BigInt
+  swapfree   BigInt
+  buffcache  BigInt
+  SystemLoad SystemLoad?
+}

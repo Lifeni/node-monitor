@@ -1,20 +1,43 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@influxdata/influxdb-client': ^1.18.0
+  '@prisma/client': ^3.2.1
   h3: ^0.3.1
+  prisma: ^3.2.1
   socket.io: ^4.2.0
 
 dependencies:
-  '@influxdata/influxdb-client': 1.18.0
+  '@prisma/client': 3.2.1_prisma@3.2.1
   h3: 0.3.1
   socket.io: 4.2.0
 
+devDependencies:
+  prisma: 3.2.1
+
 packages:
 
-  /@influxdata/influxdb-client/1.18.0:
-    resolution: {integrity: sha512-0C2mKb5hR61WqiWzwEwqHvBkYzaFI4QLKaffGj3IPHoouKYoFQSCLHK5C3Jws25LopqWvellVimf12CsnZXzGg==}
+  /@prisma/client/3.2.1_prisma@3.2.1:
+    resolution: {integrity: sha512-nakt9YoDFD4cgTkRTSVbzG40AKmmbVEtXE3csVqBdDXsm0/L4PQdtbtzILNzq28xv8HH8oHgFKWnsItM23mSDw==}
+    engines: {node: '>=12.6'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c
+      prisma: 3.2.1
     dev: false
+
+  /@prisma/engines-version/3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c:
+    resolution: {integrity: sha512-O4dHSbqfX7yAjFMawIEzv6wefv3LRMDK4J20Y70NvE3otbE3CnChlmghkCvMsQ1CGF1QuGlrqfw20aI2JfZcaw==}
+    dev: false
+
+  /@prisma/engines/3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c:
+    resolution: {integrity: sha512-wnHODKLQGKkE2ZCHxHQEf/4Anq/EP0ZCvX++D5w34033mwZ94iZiOsEKZZ31fgki7MTh28F1VNF5ZSFdnRjgvQ==}
+    requiresBuild: true
+    dev: true
 
   /@types/component-emitter/1.2.10:
     resolution: {integrity: sha512-bsjleuRKWmGqajMerkzox19aGbscQX5rmmvvXl3wlIp5gMG1HgkiwPxsN5p070fBDKTNSPgojVbuY1+HWMbFhg==}
@@ -132,6 +155,15 @@ packages:
     resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
     engines: {node: '>=0.10.0'}
     dev: false
+
+  /prisma/3.2.1:
+    resolution: {integrity: sha512-nXhldcFYemNSMqdTAEziggVWBNbCHTrr0amkCJruP3G2AFpzxrKtksPRLYNetxdKMJAt7aRRumusbtmTTDgyzw==}
+    engines: {node: '>=12.6'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c
+    dev: true
 
   /socket.io-adapter/2.3.2:
     resolution: {integrity: sha512-PBZpxUPYjmoogY0aoaTmo1643JelsaS1CiAwNjRVdrI0X9Seuc19Y2Wife8k88avW6haG8cznvwbubAZwH4Mtg==}

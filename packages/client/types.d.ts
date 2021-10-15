@@ -136,21 +136,6 @@ interface ISystemInfo {
   disk: FileSystemData[]
 }
 
-interface ISystemInfoMessage {
-  /**
-   * 设备 ID
-   */
-  id: string
-  /**
-   * 数据收集时间
-   */
-  time: string
-  /**
-   * 系统信息数据
-   */
-  info: ISystemInfo
-}
-
 type CpuLoadData = {
   /**
    * CPU 负载
@@ -201,24 +186,9 @@ interface ISystemLoad {
   /**
    * 各个逻辑内核 CPU 负载
    */
-  cpu: CpuLoadData[]
+  cpu: number[]
   /**
    * 内存信息
    */
   memory: MemoryLoadData
-}
-
-interface ISystemLoadMessage {
-  /**
-   * 设备 ID
-   */
-  id: string
-  /**
-   * 数据收集时间
-   */
-  time: string
-  /**
-   * 系统负载数据
-   */
-  load: ISystemLoad
 }
