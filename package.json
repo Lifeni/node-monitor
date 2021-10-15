@@ -1,6 +1,6 @@
 {
   "name": "node-monitor",
-  "description": "用前端技术做的系统信息收集程序，包含收集和展示两个部分。",
+  "description": "用前端技术做的系统信息收集程序，包含收集和展示两个部分",
   "private": true,
   "author": "LFN <liangfengning@foxmail.com>",
   "license": "MIT",

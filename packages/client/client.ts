@@ -1,7 +1,10 @@
 import { error, log } from './log'
 import { connectToServer, postSystemInfo, postSystemLoad } from './post'
 
-/** 读取数据发送时间间隔 */
+/**
+ * 读取数据发送时间间隔
+ * @default 5000
+ */
 const INTERVAL = (Number(process.env.INTERVAL) || 5) * 1000
 
 const startApp = async () => {

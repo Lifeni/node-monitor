@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "description": "负责收集系统信息的客户端。",
+  "description": "负责收集系统信息的客户端",
   "main": "client.ts",
   "types": "index.d.ts",
   "author": "LFN <liangfengning@foxmail.com>",
