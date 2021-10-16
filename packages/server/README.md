@@ -5,9 +5,9 @@
 ## 用的技术
 
 - [**socketio/socket.io**: Realtime application framework (Node.JS server)](https://github.com/socketio/socket.io)
+- [**hapijs/hapi**: The Simple, Secure Framework Developers Trust](https://github.com/hapijs/hapi)
 - [**prisma/prisma**: Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite & MongoDB (Preview)](https://github.com/prisma/prisma)
 - [**postgres/postgres**: Mirror of the official PostgreSQL GIT repository.](https://github.com/postgres/postgres)
-- [**unjs/h3**: Minimal h(ttp) framework built for high performance and portability ⚡️](https://github.com/unjs/h3)
 
 ## 环境变量
 

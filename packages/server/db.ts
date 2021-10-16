@@ -12,19 +12,31 @@ export const connectToDatabase = async () => {
   }
 }
 
+/**
+ * 将系统信息数据写入数据库
+ * @function writeSystemInfo
+ * @param data ISystemInfoMessage
+ */
 export const writeSystemInfo = async (data: ISystemInfoMessage) => {
   try {
     if (prisma) {
       const { id, time, info } = data
-      await prisma.systemInfo.create({
-        data: {
+      const record = {
+        time,
+        system: { create: info.system },
+        os: { create: info.os },
+        cpu: { create: info.cpu },
+        network: { create: info.network },
+        disk: { create: info.disk },
+      }
+      await prisma.systemInfo.upsert({
+        where: {
           name: id,
-          time,
-          system: { create: info.system },
-          os: { create: info.os },
-          cpu: { create: info.cpu },
-          network: { create: info.network },
-          disk: { create: info.disk },
+        },
+        update: record,
+        create: {
+          name: id,
+          ...record,
         },
         include: {
           system: true,
@@ -40,6 +52,11 @@ export const writeSystemInfo = async (data: ISystemInfoMessage) => {
   }
 }
 
+/**
+ * 将系统负载数据写入数据库
+ * @function writeSystemLoad
+ * @param data ISystemLoadMessage
+ */
 export const writeSystemLoad = async (data: ISystemLoadMessage) => {
   try {
     if (prisma) {
@@ -57,5 +74,17 @@ export const writeSystemLoad = async (data: ISystemLoadMessage) => {
     }
   } catch (err) {
     error('mongo-db', '写入 MongoDB 时出现错误', err)
+  }
+}
+
+export const readAllBots = async () => {
+  try {
+    if (prisma) {
+      return await prisma.systemInfo.findMany({
+        select: { id: true, name: true, time: true, system: true, os: true },
+      })
+    }
+  } catch (err) {
+    error('mongo-db', '读取 MongoDB 时出现错误', err)
   }
 }

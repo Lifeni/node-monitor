@@ -2,7 +2,7 @@
 CREATE TABLE "SystemInfo" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "time" BIGINT NOT NULL,
+    "time" DECIMAL(65,30) NOT NULL,
     "systemId" INTEGER NOT NULL,
     "osId" INTEGER NOT NULL,
     "cpuId" INTEGER NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE "System" (
     "id" SERIAL NOT NULL,
     "manufacturer" TEXT NOT NULL,
     "model" TEXT NOT NULL,
-    "version" BIGINT NOT NULL,
+    "version" DECIMAL(65,30) NOT NULL,
     "virtual" BOOLEAN NOT NULL,
 
     CONSTRAINT "System_pkey" PRIMARY KEY ("id")
@@ -62,9 +62,9 @@ CREATE TABLE "Network" (
 CREATE TABLE "Disk" (
     "id" SERIAL NOT NULL,
     "fs" TEXT NOT NULL,
-    "size" BIGINT NOT NULL,
-    "used" BIGINT NOT NULL,
-    "available" BIGINT NOT NULL,
+    "size" DECIMAL(65,30) NOT NULL,
+    "used" DECIMAL(65,30) NOT NULL,
+    "available" DECIMAL(65,30) NOT NULL,
     "use" DECIMAL(65,30) NOT NULL,
     "mount" TEXT NOT NULL,
     "systemInfoId" INTEGER,
@@ -76,7 +76,7 @@ CREATE TABLE "Disk" (
 CREATE TABLE "SystemLoad" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "time" BIGINT NOT NULL,
+    "time" DECIMAL(65,30) NOT NULL,
     "load" DECIMAL(65,30) NOT NULL,
     "cpu" DECIMAL(65,30)[],
     "memoryId" INTEGER NOT NULL,
@@ -87,14 +87,14 @@ CREATE TABLE "SystemLoad" (
 -- CreateTable
 CREATE TABLE "Memory" (
     "id" SERIAL NOT NULL,
-    "total" BIGINT NOT NULL,
-    "free" BIGINT NOT NULL,
-    "used" BIGINT NOT NULL,
-    "available" BIGINT NOT NULL,
-    "swaptotal" BIGINT NOT NULL,
-    "swapused" BIGINT NOT NULL,
-    "swapfree" BIGINT NOT NULL,
-    "buffcache" BIGINT NOT NULL,
+    "total" DECIMAL(65,30) NOT NULL,
+    "free" DECIMAL(65,30) NOT NULL,
+    "used" DECIMAL(65,30) NOT NULL,
+    "available" DECIMAL(65,30) NOT NULL,
+    "swaptotal" DECIMAL(65,30) NOT NULL,
+    "swapused" DECIMAL(65,30) NOT NULL,
+    "swapfree" DECIMAL(65,30) NOT NULL,
+    "buffcache" DECIMAL(65,30) NOT NULL,
 
     CONSTRAINT "Memory_pkey" PRIMARY KEY ("id")
 );

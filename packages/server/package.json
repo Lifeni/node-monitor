@@ -9,7 +9,7 @@
   "bin": "./dist/bundle/server.js",
   "scripts": {
     "start": "ts-node --files ./server.ts",
-    "dev": "nodemon --exec \"ts-node --files ./server.ts\"",
+    "dev": "nodemon --ext \"ts\" --exec \"ts-node --files ./server.ts\"",
     "build": "esbuild ./server.ts --bundle --platform=node --outfile=./dist/bundle/server.js --minify",
     "build:docker": "npm run build && docker build -t server .",
     "build:linux": "npm run build && pkg .",

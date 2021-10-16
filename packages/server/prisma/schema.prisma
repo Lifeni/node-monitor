@@ -13,7 +13,7 @@ generator client {
 model SystemInfo {
   id       Int       @id @default(autoincrement())
   name     String    @unique
-  time     BigInt    @unique
+  time     Decimal   @unique
   system   System    @relation(fields: [systemId], references: [id])
   os       Os        @relation(fields: [osId], references: [id])
   cpu      Cpu       @relation(fields: [cpuId], references: [id])
@@ -28,7 +28,7 @@ model System {
   id           Int         @id @default(autoincrement())
   manufacturer String
   model        String
-  version      BigInt
+  version      Decimal
   virtual      Boolean
   SystemInfo   SystemInfo?
 }
@@ -67,9 +67,9 @@ model Network {
 model Disk {
   id           Int         @id @default(autoincrement())
   fs           String
-  size         BigInt
-  used         BigInt
-  available    BigInt
+  size         Decimal
+  used         Decimal
+  available    Decimal
   use          Decimal
   mount        String
   SystemInfo   SystemInfo? @relation(fields: [systemInfoId], references: [id])
@@ -79,7 +79,7 @@ model Disk {
 model SystemLoad {
   id       Int       @id @default(autoincrement())
   name     String
-  time     BigInt    @unique
+  time     Decimal   @unique
   load     Decimal
   cpu      Decimal[]
   memory   Memory    @relation(fields: [memoryId], references: [id])
@@ -88,13 +88,13 @@ model SystemLoad {
 
 model Memory {
   id         Int         @id @default(autoincrement())
-  total      BigInt
-  free       BigInt
-  used       BigInt
-  available  BigInt
-  swaptotal  BigInt
-  swapused   BigInt
-  swapfree   BigInt
-  buffcache  BigInt
+  total      Decimal
+  free       Decimal
+  used       Decimal
+  available  Decimal
+  swaptotal  Decimal
+  swapused   Decimal
+  swapfree   Decimal
+  buffcache  Decimal
   SystemLoad SystemLoad?
 }

@@ -1,4 +1,5 @@
 import Hapi from '@hapi/hapi'
+import { readAllBots } from './db'
 import { log } from './log'
 
 /**
@@ -14,8 +15,6 @@ export const startServer = async () => {
     port: HTTP_PORT,
     host: '0.0.0.0',
   })
-  await server.start()
-  log('http-server', `已启动 HTTP 服务器 (${HTTP_PORT})`)
 
   /**
    * 测试接口
@@ -25,6 +24,20 @@ export const startServer = async () => {
   server.route({
     method: 'GET',
     path: '/ping',
-    handler: () => 'pong',
+    handler: async () => 'pong',
   })
+
+  /**
+   * 获取所有的连接过的客户端 ID
+   * @name bots
+   * @returns {Promise}
+   */
+  server.route({
+    method: 'GET',
+    path: '/bots',
+    handler: async () => (await readAllBots()) || [],
+  })
+
+  await server.start()
+  log('http-server', `已启动 HTTP 服务器 (${HTTP_PORT})`)
 }

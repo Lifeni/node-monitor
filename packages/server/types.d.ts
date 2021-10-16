@@ -222,3 +222,26 @@ interface ISystemLoadMessage {
    */
   load: ISystemLoad
 }
+
+interface ISystemOverview {
+  /**
+   * 数据库 ID
+   */
+  id: number
+  /**
+   * 客户端名称
+   */
+  name: string
+  /**
+   * 数据时间戳
+   */
+  time: Decimal
+  /**
+   * 硬件或虚拟机数据
+   */
+  system: SystemData
+  /**
+   * 操作系统数据
+   */
+  os: OsData
+}
