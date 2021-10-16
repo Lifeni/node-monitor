@@ -11,7 +11,7 @@
     "start": "ts-node --files ./client.ts",
     "dev": "nodemon --exec \"ts-node --files ./client.ts\"",
     "build": "esbuild ./client.ts --bundle --platform=node --outfile=./dist/bundle/client.js --minify",
-    "build:docker": "npm run build && docker build -t collector-client .",
+    "build:docker": "npm run build && docker build -t client .",
     "build:linux": "npm run build && pkg .",
     "check": "tsc --noEmit"
   },
@@ -28,7 +28,9 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.175",
-    "@types/uuid": "^8.3.1"
+    "esbuild": "^0.13.7",
+    "nodemon": "^2.0.13",
+    "pkg": "^5.3.3",
+    "ts-node": "^10.3.0"
   }
 }

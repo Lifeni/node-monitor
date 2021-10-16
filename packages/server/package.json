@@ -11,7 +11,7 @@
     "start": "ts-node --files ./server.ts",
     "dev": "nodemon --exec \"ts-node --files ./server.ts\"",
     "build": "esbuild ./server.ts --bundle --platform=node --outfile=./dist/bundle/server.js --minify",
-    "build:docker": "npm run build && docker build -t collector-server .",
+    "build:docker": "npm run build && docker build -t server .",
     "build:linux": "npm run build && pkg .",
     "check": "tsc --noEmit",
     "prisma:generate": "pnpx prisma generate"
@@ -29,6 +29,10 @@
     "socket.io": "^4.2.0"
   },
   "devDependencies": {
-    "prisma": "^3.2.1"
+    "esbuild": "^0.13.7",
+    "nodemon": "^2.0.13",
+    "pkg": "^5.3.3",
+    "prisma": "^3.2.1",
+    "ts-node": "^10.3.0"
   }
 }
