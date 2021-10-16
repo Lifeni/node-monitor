@@ -1,5 +1,6 @@
 /**
  * 返回当前时间
+ * @function time
  * @returns {string} 格式是 `2021-10-01 21:17:20`
  */
 const time = (): string => {
@@ -12,7 +13,8 @@ const time = (): string => {
 }
 
 /**
- * 正常的日志
+ * 打印一条正常的日志
+ * @function
  * @param scope 日志所属模块
  * @param message 日志内容
  */
@@ -21,7 +23,8 @@ export const log = (scope: string, message: string) => {
 }
 
 /**
- * 错误的日志
+ * 打印一条错误的日志
+ * @function
  * @param scope 日志所属模块
  * @param message 日志内容
  * @param error 错误信息（可选）

@@ -5,16 +5,18 @@ import { error, log } from './log'
 
 /**
  * 获取要连接的 WebSocket 地址
+ * @type {string}
+ * @constant
  * @default ws://localhost:9010
  */
-const WS_URL = process.env.WS_URL || 'ws://localhost:9010'
+const WS_URL: string = process.env.WS_URL || 'ws://localhost:9010'
 
 /**
  * 从环境变量中获取 ID，如果没有就临时生成
- * @default uuidv4()
- * @example f452c768-f042-42a6-a0dc-faade8cd0261
+ * @function
+ * @returns {string}
  */
-const getId = () => {
+const getId = (): string => {
   const id = process.env.ID || uuidv4()
   log('uuid', `设备 ID ${id} ${process.env.ID ? '' : '(临时)'}`)
   return id

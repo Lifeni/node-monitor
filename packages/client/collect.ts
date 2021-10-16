@@ -1,9 +1,9 @@
-import { pick } from 'lodash'
 import { get } from 'systeminformation'
 import { error } from './log'
 
 /**
  * 收集系统信息相关数据，包含硬件、操作系统、CPU、网络（IP 地址、MAC 地址）、文件系统等数据
+ * @function collectSystemInfo
  * @returns {Promise<ISystemInfo | undefined>} 返回 `ISystemInfo`，可能为 `undefined`
  */
 export const collectSystemInfo = async (): Promise<ISystemInfo | undefined> => {
@@ -30,6 +30,7 @@ export const collectSystemInfo = async (): Promise<ISystemInfo | undefined> => {
 
 /**
  * 收集系统负载相关数据，包含 CPU 负载（每个逻辑内核）、内存等数据
+ * @function collectSystemLoad
  * @returns {Promise<ISystemLoad | undefined>} 返回 `ISystemLoad`，可能为 `undefined`
  */
 export const collectSystemLoad = async (): Promise<ISystemLoad | undefined> => {

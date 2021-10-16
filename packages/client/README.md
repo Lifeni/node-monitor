@@ -7,7 +7,6 @@
 - [**socketio/socket.io**: Realtime application framework (Node.JS server)](https://github.com/socketio/socket.io)
 - [**sebhildebrandt/systeminformation**: System Information Library for Node.JS](https://github.com/sebhildebrandt/systeminformation)
 - [**uuidjs/uuid**: Generate RFC-compliant UUIDs in JavaScript](https://github.com/uuidjs/uuid)
-- [**lodash/lodash**: A modern JavaScript utility library delivering modularity, performance, & extras.](https://github.com/lodash/lodash)
 
 ## 环境变量
 

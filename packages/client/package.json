@@ -23,7 +23,6 @@
     "outputPath": "./dist/app"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
     "socket.io-client": "^4.2.0",
     "systeminformation": "^5.9.7",
     "uuid": "^8.3.2"
