@@ -10,7 +10,7 @@ type SystemData = {
   /**
    * 硬件或虚拟机版本号
    */
-  version: string
+  version: number
   /**
    * 是否虚拟化
    */

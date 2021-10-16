@@ -12,11 +12,9 @@ export const startServer = async () => {
 
   io.on('connection', socket => {
     socket.on('system-info', async (data: ISystemInfoMessage) => {
-      console.log('system-info', data)
       await writeSystemInfo(data)
     })
     socket.on('system-load', async (data: ISystemLoadMessage) => {
-      console.log('system-load', data)
       await writeSystemLoad(data)
     })
   })

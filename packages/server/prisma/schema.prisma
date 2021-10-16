@@ -2,17 +2,16 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DB_URL")
 }
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+  provider = "prisma-client-js"
 }
 
 model SystemInfo {
-  id       String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id       Int       @id @default(autoincrement())
   name     String    @unique
   time     BigInt    @unique
   system   System    @relation(fields: [systemId], references: [id])
@@ -20,22 +19,22 @@ model SystemInfo {
   cpu      Cpu       @relation(fields: [cpuId], references: [id])
   network  Network[]
   disk     Disk[]
-  systemId String    @unique @db.ObjectId
-  osId     String    @unique @db.ObjectId
-  cpuId    String    @unique @db.ObjectId
+  systemId Int       @unique
+  osId     Int       @unique
+  cpuId    Int       @unique
 }
 
 model System {
-  id           String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id           Int         @id @default(autoincrement())
   manufacturer String
   model        String
-  version      String
+  version      BigInt
   virtual      Boolean
   SystemInfo   SystemInfo?
 }
 
 model Os {
-  id         String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id         Int         @id @default(autoincrement())
   platform   String
   distro     String
   release    String
@@ -45,7 +44,7 @@ model Os {
 }
 
 model Cpu {
-  id            String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id            Int         @id @default(autoincrement())
   manufacturer  String
   brand         String
   speed         Decimal
@@ -56,17 +55,17 @@ model Cpu {
 }
 
 model Network {
-  id           String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id           Int         @id @default(autoincrement())
   iface        String
   ip4          String
   ip6          String
   mac          String
   SystemInfo   SystemInfo? @relation(fields: [systemInfoId], references: [id])
-  systemInfoId String?     @db.ObjectId
+  systemInfoId Int?
 }
 
 model Disk {
-  id           String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id           Int         @id @default(autoincrement())
   fs           String
   size         BigInt
   used         BigInt
@@ -74,21 +73,21 @@ model Disk {
   use          Decimal
   mount        String
   SystemInfo   SystemInfo? @relation(fields: [systemInfoId], references: [id])
-  systemInfoId String?     @db.ObjectId
+  systemInfoId Int?
 }
 
 model SystemLoad {
-  id       String    @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id       Int       @id @default(autoincrement())
   name     String
   time     BigInt    @unique
   load     Decimal
-  cpu      Decimal[] @db.Array(Decimal)
+  cpu      Decimal[]
   memory   Memory    @relation(fields: [memoryId], references: [id])
-  memoryId String    @unique @db.ObjectId
+  memoryId Int       @unique
 }
 
 model Memory {
-  id         String      @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  id         Int         @id @default(autoincrement())
   total      BigInt
   free       BigInt
   used       BigInt
