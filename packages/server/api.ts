@@ -1,5 +1,4 @@
-import { createServer } from 'http'
-import { createApp } from 'h3'
+import Hapi from '@hapi/hapi'
 import { log } from './log'
 
 /**
@@ -10,16 +9,22 @@ import { log } from './log'
  */
 const HTTP_PORT: number = Number(process.env.HTTP_PORT) || 9020
 
-const app = createApp()
-
 export const startServer = async () => {
-  createServer(app).listen(HTTP_PORT)
+  const server = Hapi.server({
+    port: HTTP_PORT,
+    host: '0.0.0.0',
+  })
+  await server.start()
   log('http-server', `已启动 HTTP 服务器 (${HTTP_PORT})`)
-}
 
-/**
- * 测试接口
- * @name ping
- * @returns pong
- */
-app.use('/ping', () => 'pong')
+  /**
+   * 测试接口
+   * @name ping
+   * @returns pong
+   */
+  server.route({
+    method: 'GET',
+    path: '/ping',
+    handler: () => 'pong',
+  })
+}
