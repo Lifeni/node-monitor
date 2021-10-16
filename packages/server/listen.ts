@@ -7,7 +7,7 @@ import { writeSystemInfo, writeSystemLoad } from './db'
  */
 const WS_PORT = Number(process.env.WS_PORT) || 9010
 
-export const startServer = async () => {
+export const startListener = async () => {
   const io = new Server(WS_PORT)
 
   io.on('connection', socket => {

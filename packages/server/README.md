@@ -4,18 +4,15 @@
 
 ## 用的技术
 
-程序依赖：
-
 - [**socketio/socket.io**: Realtime application framework (Node.JS server)](https://github.com/socketio/socket.io)
+- [**prisma/prisma**: Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite & MongoDB (Preview)](https://github.com/prisma/prisma)
+- [**postgres/postgres**: Mirror of the official PostgreSQL GIT repository.](https://github.com/postgres/postgres)
+- [**unjs/h3**: Minimal h(ttp) framework built for high performance and portability ⚡️](https://github.com/unjs/h3)
 
-开发工具：
+## 环境变量
 
-- [**pnpm/pnpm**: Fast, disk space efficient package manager](https://github.com/pnpm/pnpm)
-- [**TypeStrong/ts-node**: TypeScript execution and REPL for node.js](https://github.com/TypeStrong/ts-node)
-- [**remy/nodemon**: Monitor for any changes in your node.js application and automatically restart the server - perfect for development](https://github.com/remy/nodemon)
-- [**prettier/prettier**: Prettier is an opinionated code formatter.](https://github.com/prettier/prettier)
-
-构建工具：
-
-- [**evanw/esbuild**: An extremely fast JavaScript bundler and minifier](https://github.com/evanw/esbuild)
-- [**vercel/pkg**: Package your Node.js project into an executable](https://github.com/vercel/pkg)
+| 名称        | 用处                  | 默认值                                                           |
+| ----------- | --------------------- | ---------------------------------------------------------------- |
+| `WS_PORT`   | 服务器 WebSocket 端口 | `9010`                                                           |
+| `HTTP_PORT` | 服务器 HTTP 端口      | `9020`                                                           |
+| `DB_URL`    | 数据库接口地址        | `postgresql://<USERNAME>:<PASSWORD>@localhost:5432/node-monitor` |

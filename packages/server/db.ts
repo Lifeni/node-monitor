@@ -5,9 +5,7 @@ let prisma: PrismaClient | null = null
 
 export const connectToDatabase = async () => {
   try {
-    prisma = new PrismaClient({
-      
-    })
+    prisma = new PrismaClient({})
     log('mongo-db', '连接到 MongoDB')
   } catch (err) {
     error('mongo-db', '连接 MongoDB 时出现错误', err)
