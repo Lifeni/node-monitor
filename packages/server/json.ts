@@ -6,11 +6,8 @@ import dayjs from 'dayjs'
  * @param obj 需要序列化的对象
  * @returns {string} 序列化后的字符串
  */
-export const serialize = (obj: any) =>
+export const serialize = (obj: any): string =>
   JSON.stringify(obj, (key, value) => {
-    if (key === 'time') {
-      return dayjs(value).valueOf()
-    } else {
-      return typeof value === 'bigint' ? value.toString() : value
-    }
+    if (key === 'time') return dayjs(value).valueOf()
+    return typeof value === 'bigint' ? value.toString() : value
   })

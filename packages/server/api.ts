@@ -63,9 +63,9 @@ export const startServer = async () => {
   /**
    * 获取指定客户端的多个系统负载数据
    * @name bot/:name/load
-   * @query from {number} Unix 时间戳，从该时间戳开始获取
-   * @query to {number} Unix 时间戳，到该时间戳结束获取
-   * @query count {number} 获取的数据条数
+   * @query from {number} Unix 时间戳，从该时间戳开始获取（包含）
+   * @query to {number} Unix 时间戳，到该时间戳结束获取（包含）
+   * @query count {number} 获取的数据最大条数
    * @returns {ISystemLoad[]}
    */
   server.route({
