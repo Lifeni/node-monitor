@@ -29,7 +29,7 @@ export const startServer = async () => {
   })
 
   /**
-   * 获取所有的连接过的客户端 ID
+   * 获取所有的连接过的客户端 ID 及其简略信息
    * @name bots
    * @returns {ISystemOverviewResponse[]>}
    */

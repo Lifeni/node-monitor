@@ -20,14 +20,16 @@
 
 ## 接口设计
 
-也可以看看 [`api.ts`](./api.ts) 里的注释。
+也可以看看 [`api.ts`](./api.ts) 里的注释，和下面说的一样。
 
 ### `GET` `/bots`
 
-获取所有的连接过的客户端 ID。
+获取所有的连接过的客户端 ID 及其简略信息。
 
 <details>
 <summary>返回数据示例</summary>
+
+&nbsp;
 
 ```json
 [
@@ -54,6 +56,8 @@
 ]
 ```
 
+&nbsp;
+
 </details>
 
 ### `GET` `/bot/{name}/info`
@@ -62,6 +66,8 @@
 
 <details>
 <summary>返回数据示例</summary>
+
+&nbsp;
 
 ```json
 {
@@ -117,6 +123,8 @@
 }
 ```
 
+&nbsp;
+
 </details>
 
 ### `GET` `/bot/{name}/load`
@@ -125,6 +133,8 @@
 
 <details>
 <summary>返回数据示例</summary>
+
+&nbsp;
 
 ```json
 [
@@ -152,9 +162,11 @@
 ]
 ```
 
+&nbsp;
+
 </details>
 
-也可以使用 **查询参数（Query Parameter）** 来对数据进行筛选。
+可以使用 **查询参数（Query Parameter）** 来对数据进行筛选。
 
 | 参数    | 说明                                    | 默认值 |
 | ------- | --------------------------------------- | ------ |
