@@ -8,6 +8,7 @@
 - [**hapijs/hapi**: The Simple, Secure Framework Developers Trust](https://github.com/hapijs/hapi)
 - [**prisma/prisma**: Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite & MongoDB (Preview)](https://github.com/prisma/prisma)
 - [**postgres/postgres**: Mirror of the official PostgreSQL GIT repository.](https://github.com/postgres/postgres)
+- [**iamkun/dayjs**: ⏰ Day.js 2kB immutable date-time library alternative to Moment.js with the same modern API](https://github.com/iamkun/dayjs/)
 
 ## 环境变量
 

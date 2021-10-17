@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@hapi/hapi': ^20.2.1
   '@prisma/client': ^3.2.1
+  dayjs: ^1.10.7
   esbuild: ^0.13.7
   nodemon: ^2.0.13
   pkg: ^5.3.3
@@ -13,6 +14,7 @@ specifiers:
 dependencies:
   '@hapi/hapi': 20.2.1
   '@prisma/client': 3.2.1_prisma@3.2.1
+  dayjs: 1.10.7
   socket.io: 4.2.0
 
 devDependencies:
@@ -655,6 +657,10 @@ packages:
     resolution: {integrity: sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==}
     engines: {node: '>=8'}
     dev: true
+
+  /dayjs/1.10.7:
+    resolution: {integrity: sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

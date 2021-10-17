@@ -94,15 +94,15 @@ type FileSystemData = {
   /**
    * 文件系统大小
    */
-  size: number
+  size: number | bigint
   /**
    * 已用的文件系统大小
    */
-  used: number
+  used: number | bigint
   /**
    * 可用的文件系统大小
    */
-  available: number
+  available: number | bigint
   /**
    * 文件系统使用率
    */
@@ -162,35 +162,35 @@ type MemoryLoadData = {
   /**
    * 内存大小
    */
-  total: number
+  total: number | bigint
   /**
    * 空闲内存大小
    */
-  free: number
+  free: number | bigint
   /**
    * 已用内存大小
    */
-  used: number
+  used: number | bigint
   /**
    * 可用内存大小
    */
-  available: number
+  available: number | bigint
   /**
    * 交换分区或交换文件大小
    */
-  swaptotal: number
+  swaptotal: number | bigint
   /**
    * 已用的交换分区或交换文件大小
    */
-  swapused: number
+  swapused: number | bigint
   /**
    * 可用的交换分区或交换文件大小
    */
-  swapfree: number
+  swapfree: number | bigint
   /**
    * 缓存大小或使用量
    */
-  buffcache: number
+  buffcache: number | bigint
 }
 
 interface ISystemLoad {
@@ -223,7 +223,7 @@ interface ISystemLoadMessage {
   load: ISystemLoad
 }
 
-interface ISystemOverview {
+interface ISystemOverviewResponse {
   /**
    * 数据库 ID
    */
@@ -235,7 +235,7 @@ interface ISystemOverview {
   /**
    * 数据时间戳
    */
-  time: Decimal
+  time: Date
   /**
    * 硬件或虚拟机数据
    */
@@ -244,4 +244,22 @@ interface ISystemOverview {
    * 操作系统数据
    */
   os: OsData
+}
+
+interface ISystemLoadQuery {
+  /**
+   * 负载数据起始时间
+   * @default 最初数据
+   */
+  from?: string
+  /**
+   * 负载数据结束时间
+   * @default Date.now()
+   */
+  to?: string
+  /**
+   * 负载数据最大数量
+   * @default 10
+   */
+  count?: string
 }

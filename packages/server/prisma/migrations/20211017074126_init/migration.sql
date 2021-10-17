@@ -2,7 +2,7 @@
 CREATE TABLE "SystemInfo" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "time" DECIMAL(65,30) NOT NULL,
+    "time" TIMESTAMP(3) NOT NULL,
     "systemId" INTEGER NOT NULL,
     "osId" INTEGER NOT NULL,
     "cpuId" INTEGER NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE "System" (
     "id" SERIAL NOT NULL,
     "manufacturer" TEXT NOT NULL,
     "model" TEXT NOT NULL,
-    "version" DECIMAL(65,30) NOT NULL,
+    "version" DOUBLE PRECISION NOT NULL,
     "virtual" BOOLEAN NOT NULL,
 
     CONSTRAINT "System_pkey" PRIMARY KEY ("id")
@@ -38,7 +38,7 @@ CREATE TABLE "Cpu" (
     "id" SERIAL NOT NULL,
     "manufacturer" TEXT NOT NULL,
     "brand" TEXT NOT NULL,
-    "speed" DECIMAL(65,30) NOT NULL,
+    "speed" DOUBLE PRECISION NOT NULL,
     "cores" INTEGER NOT NULL,
     "physicalCores" INTEGER NOT NULL,
     "processors" INTEGER NOT NULL,
@@ -62,10 +62,10 @@ CREATE TABLE "Network" (
 CREATE TABLE "Disk" (
     "id" SERIAL NOT NULL,
     "fs" TEXT NOT NULL,
-    "size" DECIMAL(65,30) NOT NULL,
-    "used" DECIMAL(65,30) NOT NULL,
-    "available" DECIMAL(65,30) NOT NULL,
-    "use" DECIMAL(65,30) NOT NULL,
+    "size" BIGINT NOT NULL,
+    "used" BIGINT NOT NULL,
+    "available" BIGINT NOT NULL,
+    "use" DOUBLE PRECISION NOT NULL,
     "mount" TEXT NOT NULL,
     "systemInfoId" INTEGER,
 
@@ -76,9 +76,9 @@ CREATE TABLE "Disk" (
 CREATE TABLE "SystemLoad" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "time" DECIMAL(65,30) NOT NULL,
-    "load" DECIMAL(65,30) NOT NULL,
-    "cpu" DECIMAL(65,30)[],
+    "time" TIMESTAMP(3) NOT NULL,
+    "load" DOUBLE PRECISION NOT NULL,
+    "cpu" DOUBLE PRECISION[],
     "memoryId" INTEGER NOT NULL,
 
     CONSTRAINT "SystemLoad_pkey" PRIMARY KEY ("id")
@@ -87,14 +87,14 @@ CREATE TABLE "SystemLoad" (
 -- CreateTable
 CREATE TABLE "Memory" (
     "id" SERIAL NOT NULL,
-    "total" DECIMAL(65,30) NOT NULL,
-    "free" DECIMAL(65,30) NOT NULL,
-    "used" DECIMAL(65,30) NOT NULL,
-    "available" DECIMAL(65,30) NOT NULL,
-    "swaptotal" DECIMAL(65,30) NOT NULL,
-    "swapused" DECIMAL(65,30) NOT NULL,
-    "swapfree" DECIMAL(65,30) NOT NULL,
-    "buffcache" DECIMAL(65,30) NOT NULL,
+    "total" BIGINT NOT NULL,
+    "free" BIGINT NOT NULL,
+    "used" BIGINT NOT NULL,
+    "available" BIGINT NOT NULL,
+    "swaptotal" BIGINT NOT NULL,
+    "swapused" BIGINT NOT NULL,
+    "swapfree" BIGINT NOT NULL,
+    "buffcache" BIGINT NOT NULL,
 
     CONSTRAINT "Memory_pkey" PRIMARY KEY ("id")
 );
@@ -115,10 +115,16 @@ CREATE UNIQUE INDEX "SystemInfo_osId_key" ON "SystemInfo"("osId");
 CREATE UNIQUE INDEX "SystemInfo_cpuId_key" ON "SystemInfo"("cpuId");
 
 -- CreateIndex
+CREATE INDEX "SystemInfo_name_time_idx" ON "SystemInfo"("name", "time");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "SystemLoad_time_key" ON "SystemLoad"("time");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "SystemLoad_memoryId_key" ON "SystemLoad"("memoryId");
+
+-- CreateIndex
+CREATE INDEX "SystemLoad_name_time_idx" ON "SystemLoad"("name", "time");
 
 -- AddForeignKey
 ALTER TABLE "SystemInfo" ADD CONSTRAINT "SystemInfo_systemId_fkey" FOREIGN KEY ("systemId") REFERENCES "System"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

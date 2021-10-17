@@ -26,6 +26,7 @@
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
     "@prisma/client": "^3.2.1",
+    "dayjs": "^1.10.7",
     "socket.io": "^4.2.0"
   },
   "devDependencies": {

@@ -13,7 +13,7 @@ generator client {
 model SystemInfo {
   id       Int       @id @default(autoincrement())
   name     String    @unique
-  time     Decimal   @unique
+  time     DateTime  @unique
   system   System    @relation(fields: [systemId], references: [id])
   os       Os        @relation(fields: [osId], references: [id])
   cpu      Cpu       @relation(fields: [cpuId], references: [id])
@@ -22,13 +22,15 @@ model SystemInfo {
   systemId Int       @unique
   osId     Int       @unique
   cpuId    Int       @unique
+
+  @@index([name, time])
 }
 
 model System {
   id           Int         @id @default(autoincrement())
   manufacturer String
   model        String
-  version      Decimal
+  version      Float
   virtual      Boolean
   SystemInfo   SystemInfo?
 }
@@ -47,7 +49,7 @@ model Cpu {
   id            Int         @id @default(autoincrement())
   manufacturer  String
   brand         String
-  speed         Decimal
+  speed         Float
   cores         Int
   physicalCores Int
   processors    Int
@@ -67,34 +69,36 @@ model Network {
 model Disk {
   id           Int         @id @default(autoincrement())
   fs           String
-  size         Decimal
-  used         Decimal
-  available    Decimal
-  use          Decimal
+  size         BigInt      @db.BigInt
+  used         BigInt      @db.BigInt
+  available    BigInt      @db.BigInt
+  use          Float
   mount        String
   SystemInfo   SystemInfo? @relation(fields: [systemInfoId], references: [id])
   systemInfoId Int?
 }
 
 model SystemLoad {
-  id       Int       @id @default(autoincrement())
+  id       Int      @id @default(autoincrement())
   name     String
-  time     Decimal   @unique
-  load     Decimal
-  cpu      Decimal[]
-  memory   Memory    @relation(fields: [memoryId], references: [id])
-  memoryId Int       @unique
+  time     DateTime @unique
+  load     Float
+  cpu      Float[]
+  memory   Memory   @relation(fields: [memoryId], references: [id])
+  memoryId Int      @unique
+
+  @@index([name, time])
 }
 
 model Memory {
   id         Int         @id @default(autoincrement())
-  total      Decimal
-  free       Decimal
-  used       Decimal
-  available  Decimal
-  swaptotal  Decimal
-  swapused   Decimal
-  swapfree   Decimal
-  buffcache  Decimal
+  total      BigInt      @db.BigInt
+  free       BigInt      @db.BigInt
+  used       BigInt      @db.BigInt
+  available  BigInt      @db.BigInt
+  swaptotal  BigInt      @db.BigInt
+  swapused   BigInt      @db.BigInt
+  swapfree   BigInt      @db.BigInt
+  buffcache  BigInt      @db.BigInt
   SystemLoad SystemLoad?
 }
