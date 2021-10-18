@@ -5,16 +5,19 @@
   "author": "LFN <liangfengning@foxmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --port 9000",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.0.1",
+    "ant-design-vue": "^3.0.0-alpha.3",
     "vue": "^3.2.16"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "typescript": "^4.4.3",
+    "unplugin-vue-components": "^0.15.6",
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0"
   }

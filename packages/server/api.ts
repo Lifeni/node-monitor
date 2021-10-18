@@ -15,6 +15,12 @@ export const startServer = async () => {
   const server = Hapi.server({
     port: HTTP_PORT,
     host: '0.0.0.0',
+    routes: {
+      cors: {
+        origin: ['*'],
+        credentials: true,
+      },
+    },
   })
 
   /**
