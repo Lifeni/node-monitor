@@ -4,16 +4,20 @@ specifiers:
   '@ant-design/icons-vue': ^6.0.1
   '@vitejs/plugin-vue': ^1.9.3
   ant-design-vue: ^3.0.0-alpha.3
+  dayjs: ^1.10.7
   typescript: ^4.4.3
   unplugin-vue-components: ^0.15.6
   vite: ^2.6.4
   vue: ^3.2.16
+  vue-router: '4'
   vue-tsc: ^0.3.0
 
 dependencies:
   '@ant-design/icons-vue': 6.0.1_vue@3.2.20
   ant-design-vue: 3.0.0-alpha.3_vue@3.2.20
+  dayjs: 1.10.7
   vue: 3.2.20
+  vue-router: 4.0.12_vue@3.2.20
 
 devDependencies:
   '@vitejs/plugin-vue': 1.9.3_vite@2.6.7
@@ -239,6 +243,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.20
       '@vue/shared': 3.2.20
+    dev: false
+
+  /@vue/devtools-api/6.0.0-beta.19:
+    resolution: {integrity: sha512-ObzQhgkoVeoyKv+e8+tB/jQBL2smtk/NmC9OmFK8UqdDpoOdv/Kf9pyDWL+IFyM7qLD2C75rszJujvGSPSpGlw==}
     dev: false
 
   /@vue/reactivity/3.2.20:
@@ -1328,6 +1336,15 @@ packages:
       vscode-pug-languageservice: 0.27.24
       vscode-typescript-languageservice: 0.27.25
     dev: true
+
+  /vue-router/4.0.12_vue@3.2.20:
+    resolution: {integrity: sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.19
+      vue: 3.2.20
+    dev: false
 
   /vue-tsc/0.3.0_typescript@4.4.4:
     resolution: {integrity: sha512-zaDRZBxwRIz1XjhNP92FqugG71st6BUMnA2EwPeXrAyzbEYVRz6TezNFceYl3QYqqN8CtaxbqUhaQEDj/ntoCA==}

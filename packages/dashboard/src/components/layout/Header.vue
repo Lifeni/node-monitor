@@ -1,9 +1,11 @@
 <template>
   <a-layout-header class="header">
     <a-space align="center">
-      <a-typography-title class="title">Node Montior</a-typography-title>
+      <router-link to="/">
+        <a-typography-title class="title"> Node Monitor </a-typography-title>
+      </router-link>
       <a-divider type="vertical" />
-      <a-typography-text class="title" v-if="{ title }" type="secondary">
+      <a-typography-text class="subtitle" v-if="{ title }" type="secondary">
         {{ props.title }}
       </a-typography-text>
     </a-space>
@@ -11,14 +13,19 @@
     <a-space align="center" size="middle">
       <a-tooltip>
         <template #title>搜索客户端</template>
-        <a-button shape="circle" size="large">
+        <a-button shape="circle" size="large" class="icon">
           <template #icon><SearchOutlined /></template>
         </a-button>
       </a-tooltip>
 
-      <a-tooltip>
+      <a-tooltip v-if="props.reFetch">
         <template #title>重新获取数据</template>
-        <a-button shape="circle" size="large" @click="props.reFetch()">
+        <a-button
+          shape="circle"
+          size="large"
+          @click="props.reFetch?.()"
+          class="icon"
+        >
           <template #icon><SyncOutlined /></template>
         </a-button>
       </a-tooltip>
@@ -30,6 +37,7 @@
           size="large"
           href="https://119.3.208.164/LFN/node-monitor"
           target="_blank"
+          class="icon"
         >
           <template #icon><HomeOutlined /></template>
         </a-button>
@@ -47,7 +55,7 @@ import {
 
 const props = defineProps<{
   title?: string
-  reFetch: () => void
+  reFetch?: () => void
 }>()
 </script>
 
@@ -65,5 +73,13 @@ const props = defineProps<{
   margin: 1rem 0;
   padding: 1rem 0;
   font-size: 1.125rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+.icon {
+  border: none;
 }
 </style>

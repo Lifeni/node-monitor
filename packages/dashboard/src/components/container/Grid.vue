@@ -1,6 +1,6 @@
 <template>
-  <a-row class="row" justify="center" gutter="16" wrap="true">
-      <slot></slot>
+  <a-row class="row" justify="center" :gutter="[16, 16]" :wrap="true">
+    <slot></slot>
   </a-row>
 </template>
 

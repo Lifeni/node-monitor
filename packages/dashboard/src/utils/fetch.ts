@@ -18,10 +18,10 @@ export const get = async <T>(url: string): Promise<T | null> => {
     case 200:
       return res.json()
     case 404:
-      message.info('这里没有数据。')
+      message.info('这里没有数据')
       return null
     default:
-      message.error('服务器出错了。')
+      message.error('服务器出错了')
       console.error(res.status, res.statusText)
       return null
   }
