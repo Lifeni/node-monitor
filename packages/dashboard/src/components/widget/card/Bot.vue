@@ -69,6 +69,7 @@ const table = [
 
 .icon {
   margin: 0 1rem 0 0.25rem;
+  transform: scale(1.1);
 }
 
 .footer {

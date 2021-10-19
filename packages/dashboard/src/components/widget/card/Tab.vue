@@ -103,7 +103,6 @@ const toSize = (key: keyof FileSystemData) => {
 <style scoped>
 .card {
   border-radius: 0.5rem;
-  width: fit-content;
 }
 
 .title {

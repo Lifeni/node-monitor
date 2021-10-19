@@ -31,7 +31,7 @@
             :suffix="`${infos.cpu.speed}GHz | ${infos.cpu.physicalCores} 个核心 | ${infos.cpu.cores} 个逻辑处理器`"
           />
         </Grid>
-        <Grid v-if="infos" :wrap="false">
+        <Grid v-if="infos" :wrap="true">
           <Tab type="网络" :data="infos.network" />
           <Tab type="文件系统" :data="infos.disk" />
         </Grid>
@@ -80,6 +80,7 @@ onMounted(async () => {
 }
 
 .nest-layout {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

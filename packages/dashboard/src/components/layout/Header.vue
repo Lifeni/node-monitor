@@ -10,7 +10,7 @@
       </a-typography-text>
     </a-space>
 
-    <a-space align="center" size="middle">
+    <a-space align="center" size="large">
       <a-tooltip v-if="props.reFetch">
         <template #title>重新获取数据</template>
         <a-button
@@ -59,14 +59,14 @@ const props = defineProps<{
 }
 
 .title {
-  margin: 1rem 0;
+  margin: 1.25rem 0;
   padding: 1rem 0;
   font-size: 1.125rem;
 }
 
 .subtitle {
   font-size: 1rem;
-  line-height: 2;
+  padding: 0.5rem 0;
   vertical-align: text-top;
 }
 
