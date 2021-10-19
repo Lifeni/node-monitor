@@ -10,3 +10,14 @@
 body {
   font-family: var(--font-sans);
 }
+
+.ant-statistic-content {
+  font-family: var(--font-sans);
+  white-space: nowrap;
+}
+
+.ant-statistic-content-suffix {
+  display: flex;
+  margin: 0;
+  padding: 0.25rem 0 0 0;
+}

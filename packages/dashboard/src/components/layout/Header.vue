@@ -77,6 +77,8 @@ const props = defineProps<{
 
 .subtitle {
   font-size: 1rem;
+  line-height: 2;
+  vertical-align: text-top;
 }
 
 .icon {

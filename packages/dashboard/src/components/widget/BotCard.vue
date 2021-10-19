@@ -3,7 +3,7 @@
     <a-card
       hoverable
       class="card"
-      bodyStyle="padding: 1rem 1.5rem 1.25rem 1.5rem;"
+      bodyStyle="padding: 0.5rem 1.5rem 1.25rem 1.5rem;"
     >
       <template #title>
         <DesktopOutlined class="icon" />
@@ -57,11 +57,7 @@ const table = [
   },
   {
     name: '设备',
-    value: `${props.bot.system.manufacturer} ${props.bot.system.model} ${props.bot.system.version}`,
-  },
-  {
-    name: '虚拟化',
-    value: `${props.bot.system.virtual ? '已启用' : '未启用'}`,
+    value: `${props.bot.system.manufacturer} ${props.bot.system.model}`,
   },
 ]
 </script>
@@ -69,6 +65,7 @@ const table = [
 <style scoped>
 .card {
   max-width: 24rem;
+  border-radius: 0.5rem;
 }
 
 .icon {
