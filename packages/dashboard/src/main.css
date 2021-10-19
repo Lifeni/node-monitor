@@ -22,10 +22,19 @@ body {
   padding: 0.25rem 0 0 0;
 }
 
-.description table {
+.ant-description table {
   width: auto !important;
 }
 
-.description table tr td:not(:first-of-type) {
+.ant-description table tr td:not(:first-of-type) {
   padding-left: 1rem;
+}
+
+.ant-row {
+  width: 100%;
+  max-width: 64rem;
+}
+
+.ant-col {
+  flex: content;
 }

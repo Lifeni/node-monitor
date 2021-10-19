@@ -8,7 +8,7 @@
         :re-fetch="reFetch"
         v-else-if="bots.length === 0"
       />
-      <Grid v-else>
+      <Grid v-else :wrap="true">
         <BotCard v-for="bot in bots" :bot="bot" :key="bot.id" />
       </Grid>
     </Main>

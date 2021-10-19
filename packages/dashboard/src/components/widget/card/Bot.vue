@@ -1,5 +1,5 @@
 <template>
-  <a-col>
+  <a-col style="flex: 1">
     <a-card
       hoverable
       class="card"
@@ -64,7 +64,6 @@ const table = [
 
 <style scoped>
 .card {
-  max-width: 24rem;
   border-radius: 0.5rem;
 }
 

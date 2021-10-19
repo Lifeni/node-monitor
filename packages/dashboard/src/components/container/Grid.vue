@@ -1,11 +1,11 @@
 <template>
-  <a-row class="row" justify="center" :gutter="[16, 16]" :wrap="true">
+  <a-row class="row" justify="center" :gutter="[16, 16]" :wrap="wrap">
     <slot></slot>
   </a-row>
 </template>
 
-<style>
-.row {
-  width: 100%;
-}
-</style>
+<script setup lang="ts">
+const props = defineProps<{
+  wrap?: boolean
+}>()
+</script>

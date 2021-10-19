@@ -11,13 +11,6 @@
     </a-space>
 
     <a-space align="center" size="middle">
-      <a-tooltip>
-        <template #title>搜索客户端</template>
-        <a-button shape="circle" size="large" class="icon">
-          <template #icon><SearchOutlined /></template>
-        </a-button>
-      </a-tooltip>
-
       <a-tooltip v-if="props.reFetch">
         <template #title>重新获取数据</template>
         <a-button
@@ -39,7 +32,7 @@
           target="_blank"
           class="icon"
         >
-          <template #icon><HomeOutlined /></template>
+          <template #icon><BugOutlined /></template>
         </a-button>
       </a-tooltip>
     </a-space>
@@ -47,11 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  HomeOutlined,
-  SearchOutlined,
-  SyncOutlined,
-} from '@ant-design/icons-vue'
+import { BugOutlined, SyncOutlined } from '@ant-design/icons-vue'
 
 const props = defineProps<{
   title?: string

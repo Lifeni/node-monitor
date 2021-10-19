@@ -5,7 +5,7 @@
       :tab-list="tabList"
       :active-tab-key="tabKey"
       @tabChange="(key:string) => (tabKey = key)"
-      bodyStyle="padding: 1.5rem 1.5rem 1.25rem 1.5rem;"
+      bodyStyle="padding: 1.5rem 1.5rem 1rem 1.5rem;"
     >
       <template #title>
         <a-typography-text type="secondary" class="title">
@@ -40,13 +40,13 @@
           {{ (tabContent as FileSystemData).mount }}
         </a-descriptions-item>
         <a-descriptions-item label="大小">
-          {{ byteSize((tabContent as FileSystemData).size) }}
+          {{ toSize('size') }}
         </a-descriptions-item>
         <a-descriptions-item label="已用">
-          {{ byteSize((tabContent as FileSystemData).used) }}
+          {{ toSize('used') }}
         </a-descriptions-item>
         <a-descriptions-item label="可用">
-          {{ byteSize((tabContent as FileSystemData).available) }}
+          {{ toSize('available') }}
         </a-descriptions-item>
         <a-descriptions-item label="使用率">
           {{ (tabContent as FileSystemData).use }}%
@@ -94,6 +94,10 @@ const tabContent = computed(() => {
     }
   }
 })
+
+const toSize = (key: keyof FileSystemData) => {
+  return byteSize(Number((tabContent.value as FileSystemData)[key]))
+}
 </script>
 
 <style scoped>
