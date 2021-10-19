@@ -26,7 +26,9 @@ export const writeSystemInfo = async (data: ISystemInfoMessage) => {
       // 需要写入的数据
       const record = {
         time: dayjs(time).toDate(),
-        system: { create: info.system },
+        system: {
+          create: { ...info.system, version: `${info.system.version}` },
+        },
         os: { create: info.os },
         cpu: { create: info.cpu },
         network: { create: info.network },

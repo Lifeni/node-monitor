@@ -15,7 +15,7 @@ CREATE TABLE "System" (
     "id" SERIAL NOT NULL,
     "manufacturer" TEXT NOT NULL,
     "model" TEXT NOT NULL,
-    "version" DOUBLE PRECISION NOT NULL,
+    "version" TEXT NOT NULL,
     "virtual" BOOLEAN NOT NULL,
 
     CONSTRAINT "System_pkey" PRIMARY KEY ("id")

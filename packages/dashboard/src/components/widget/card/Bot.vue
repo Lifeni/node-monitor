@@ -57,7 +57,7 @@ const table = [
   },
   {
     name: '设备',
-    value: `${props.bot.system.manufacturer} ${props.bot.system.model}`,
+    value: `${props.bot.system.manufacturer} ${props.bot.system.model} ${props.bot.system.version}`,
   },
 ]
 </script>

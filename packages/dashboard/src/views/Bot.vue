@@ -22,7 +22,7 @@
           />
           <Info
             title="设备"
-            :content="`${infos.system.model}`"
+            :content="`${infos.system.model} ${infos.system.version}`"
             :suffix="`${infos.system.manufacturer}`"
           />
           <Info
@@ -50,7 +50,7 @@ import { BASE_API } from '../utils/const'
 import { get } from '../utils/fetch'
 import Info from '../components/widget/card/Info.vue'
 import Tab from '../components/widget/card/Tab.vue'
-import Grid from '../components/container/Grid.vue'
+import Grid from '../components/widget/Grid.vue'
 
 const route = useRoute()
 const id = route.params.id

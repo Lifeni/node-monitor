@@ -30,7 +30,7 @@ model System {
   id           Int         @id @default(autoincrement())
   manufacturer String
   model        String
-  version      Float
+  version      String
   virtual      Boolean
   SystemInfo   SystemInfo?
 }

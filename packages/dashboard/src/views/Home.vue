@@ -19,7 +19,7 @@
 <script setup lang="ts">
 import { message } from 'ant-design-vue'
 import { onMounted, ref } from 'vue'
-import Grid from '../components/container/Grid.vue'
+import Grid from '../components/widget/Grid.vue'
 import Footer from '../components/layout/Footer.vue'
 import Header from '../components/layout/Header.vue'
 import Main from '../components/layout/Main.vue'

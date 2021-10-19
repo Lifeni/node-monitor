@@ -12,14 +12,11 @@
     "dev": "nodemon --ext \"ts\" --exec \"ts-node --files ./server.ts\"",
     "build": "esbuild ./client.ts --bundle --platform=node --outfile=./dist/bundle/client.js --minify",
     "build:docker": "npm run build && docker build -t client .",
-    "build:linux": "npm run build && pkg .",
+    "build:pkg": "npm run build && pkg .",
     "check": "tsc --noEmit"
   },
   "pkg": {
     "scripts": "./dist/bundle/client.js",
-    "targets": [
-      "node16-linux"
-    ],
     "outputPath": "./dist/app"
   },
   "dependencies": {

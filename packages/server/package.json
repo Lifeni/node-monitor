@@ -12,15 +12,13 @@
     "dev": "nodemon --ext \"ts\" --exec \"ts-node --files ./server.ts\"",
     "build": "esbuild ./server.ts --bundle --platform=node --outfile=./dist/bundle/server.js --minify",
     "build:docker": "npm run build && docker build -t server .",
-    "build:linux": "npm run build && pkg .",
+    "build:pkg": "npm run build && pkg .",
     "check": "tsc --noEmit",
-    "prisma:generate": "pnpx prisma generate"
+    "prisma:generate": "pnpx prisma generate",
+    "prisma:init": "npx prisma migrate dev --name init"
   },
   "pkg": {
     "scripts": "./dist/bundle/server.js",
-    "targets": [
-      "node16-linux"
-    ],
     "outputPath": "./dist/app"
   },
   "dependencies": {
