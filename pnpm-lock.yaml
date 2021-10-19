@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/byte-size': ^8.1.0
   '@types/hapi__hapi': ^20.0.9
   '@types/node': ^16.10.5
   '@types/uuid': ^8.3.1
@@ -9,6 +10,7 @@ specifiers:
   typescript: ^4.4.4
 
 devDependencies:
+  '@types/byte-size': 8.1.0
   '@types/hapi__hapi': 20.0.9
   '@types/node': 16.10.9
   '@types/uuid': 8.3.1
@@ -993,6 +995,10 @@ packages:
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
     engines: {node: '>= 6'}
+    dev: true
+
+  /@types/byte-size/8.1.0:
+    resolution: {integrity: sha512-LCIlZh8vyx+I2fgRycE1D34c33QDppYY6quBYYoaOpQ1nGhJ/avSP2VlrAefVotjJxgSk6WkKo0rTcCJwGG7vA==}
     dev: true
 
   /@types/hapi__catbox/10.2.4:

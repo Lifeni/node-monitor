@@ -10,26 +10,29 @@
       />
       <a-layout v-else class="nest-layout">
         <Grid v-if="infos">
-          <InfoCard
+          <Info
             title="主机名"
             :content="infos.os.hostname"
             :suffix="infos.system.virtual ? '是虚拟机' : '不是虚拟机'"
           />
-          <InfoCard
+          <Info
             title="操作系统"
             :content="`${infos.os.distro}`"
             :suffix="`${infos.os.release} (${infos.os.arch})`"
           />
-          <InfoCard
+          <Info
             title="设备"
             :content="`${infos.system.model}`"
             :suffix="`${infos.system.manufacturer}`"
           />
-          <InfoCard
+          <Info
             title="CPU"
             :content="`${infos.cpu.manufacturer} ${infos.cpu.brand}`"
             :suffix="`${infos.cpu.speed}GHz | ${infos.cpu.physicalCores} 个核心 | ${infos.cpu.cores} 个逻辑处理器`"
           />
+
+          <Tab type="网络" :data="infos.network" />
+          <Tab type="文件系统" :data="infos.disk" />
         </Grid>
       </a-layout>
     </Main>
@@ -44,7 +47,9 @@ import { useRoute } from 'vue-router'
 import NotFound from '../components/widget/NotFound.vue'
 import { BASE_API } from '../utils/const'
 import { get } from '../utils/fetch'
-import InfoCard from '../components/widget/InfoCard.vue'
+import Info from '../components/widget/card/Info.vue'
+import Tab from '../components/widget/card/Tab.vue'
+import Grid from '../components/container/Grid.vue'
 
 const route = useRoute()
 const id = route.params.id

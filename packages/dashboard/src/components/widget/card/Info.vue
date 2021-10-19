@@ -26,7 +26,6 @@ const props = defineProps<{
 
 <style scoped>
 .card {
-  max-width: 24rem;
   border-radius: 0.5rem;
 }
 
