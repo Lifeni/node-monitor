@@ -60,7 +60,7 @@ const props = defineProps<{
 }>()
 
 const calendarFomatter = {
-  sameDay: 'HH:mm:ss',
+  sameDay: '[今天] HH:mm:ss',
   nextDay: '[明天] HH:mm:ss',
   nextWeek: 'MM-DD HH:mm:ss',
   lastDay: '[昨天] HH:mm:ss',
@@ -108,11 +108,10 @@ const config: AreaChartProps = {
   seriesField: 'type',
   isPercent: true,
   smooth: true,
-  color: ['#AED581', '#DCE775', 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff'],
+  color: ['#66BB6A', '#DCE775', '#1890ff'],
   xAxis: false,
   yAxis: false,
   legend: false,
-
   tooltip: {
     domStyles: {
       'g2-tooltip': {
