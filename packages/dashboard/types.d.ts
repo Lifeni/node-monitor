@@ -263,3 +263,30 @@ interface ISystemLoadQuery {
    */
   count?: string
 }
+
+interface ISystemLoadResponse {
+  /**
+   * 数据库 ID
+   */
+  id: number
+  /**
+   * 客户端名称
+   */
+  name: string
+  /**
+   * 数据时间戳
+   */
+  time: Date
+  /**
+   * 系统总的 CPU 负载
+   */
+  load: number
+  /**
+   * 各个逻辑内核 CPU 负载
+   */
+  cpu: number[]
+  /**
+   * 内存信息
+   */
+  memory: MemoryLoadData
+}

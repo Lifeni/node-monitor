@@ -31,6 +31,12 @@
             :suffix="`${infos.cpu.speed}GHz | ${infos.cpu.physicalCores} 个核心 | ${infos.cpu.cores} 个逻辑处理器`"
           />
         </Grid>
+        <Grid v-if="loads" :wrap="false">
+          <LoadChart :data="loads" />
+        </Grid>
+        <Grid v-if="loads" :wrap="false">
+          <MemoryChart :data="loads" />
+        </Grid>
         <Grid v-if="infos" :wrap="true">
           <Tab type="网络" :data="infos.network" />
           <Tab type="文件系统" :data="infos.disk" />
@@ -45,17 +51,19 @@
 import { message } from 'ant-design-vue'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import Info from '../components/widget/card/Info.vue'
+import Tab from '../components/widget/card/Tab.vue'
+import LoadChart from '../components/widget/chart/Load.vue'
+import MemoryChart from '../components/widget/chart/Memory.vue'
+import Grid from '../components/widget/Grid.vue'
 import NotFound from '../components/widget/NotFound.vue'
 import { BASE_API } from '../utils/const'
 import { get } from '../utils/fetch'
-import Info from '../components/widget/card/Info.vue'
-import Tab from '../components/widget/card/Tab.vue'
-import Grid from '../components/widget/Grid.vue'
 
 const route = useRoute()
 const id = route.params.id
 const infos = ref<ISystemInfo | null>(null)
-const loads = ref<ISystemLoad[] | null>(null)
+const loads = ref<ISystemLoadResponse[] | null>(null)
 
 const getInfos = async () =>
   (infos.value = await get(`${BASE_API}/bot/${id}/info`))

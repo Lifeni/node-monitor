@@ -24,7 +24,7 @@
           查看更多数据 ...
         </router-link>
         <a-typography-text type="secondary" class="time">
-          数据更新于 {{ dayjs(props.bot.time).toNow() }}
+          数据更新于 {{ dayjs(props.bot.time).fromNow() }}
         </a-typography-text>
       </a-space>
     </a-card>

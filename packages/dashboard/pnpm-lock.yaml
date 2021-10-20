@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@ant-design/icons-vue': ^6.0.1
   '@antv/g2plot': ^2.3.37
+  '@opd/g2plot-vue': ^3.6.0
   '@vitejs/plugin-vue': ^1.9.3
   ant-design-vue: ^3.0.0-alpha.3
   byte-size: ^8.1.0
@@ -17,6 +18,7 @@ specifiers:
 dependencies:
   '@ant-design/icons-vue': 6.0.1_vue@3.2.20
   '@antv/g2plot': 2.3.37
+  '@opd/g2plot-vue': 3.6.0_@antv+g2plot@2.3.37+vue@3.2.20
   ant-design-vue: 3.0.0-alpha.3_vue@3.2.20
   byte-size: 8.1.0
   dayjs: 1.10.7
@@ -318,6 +320,24 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@opd/g2plot-vue/3.6.0_@antv+g2plot@2.3.37+vue@3.2.20:
+    resolution: {integrity: sha512-y0oKOHxH5bhq+YE4RJa9Ox7OUOk+jPMsrJDDnJqnz/8zkQChXi8y9wIPVM9E+tBYHXkObSjnK1TQQa6aaHEnXg==}
+    requiresBuild: true
+    peerDependencies:
+      '@antv/g2plot': ^2.3.0
+      '@babel/runtime': ^7.13.0
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^2.0.0 || >=3.0.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      '@antv/g2plot': 2.3.37
+      core-js: 3.18.3
+      vue: 3.2.20
+      vue-demi: 0.11.4_vue@3.2.20
+    dev: false
 
   /@rollup/pluginutils/4.1.1:
     resolution: {integrity: sha512-clDjivHqWGXi7u+0d2r2sBi4Ie6VLEAzWMIkvJLnDmxoOhBYOTfzGbOQBA32THHm11/LiJbd01tJUpJsbshSWQ==}
@@ -2079,6 +2099,21 @@ packages:
       vscode-pug-languageservice: 0.28.7
       vscode-typescript-languageservice: 0.28.7
     dev: true
+
+  /vue-demi/0.11.4_vue@3.2.20:
+    resolution: {integrity: sha512-/3xFwzSykLW2HiiLie43a+FFgNOcokbBJ+fzvFXd0r2T8MYohqvphUyDQ8lbAwzQ3Dlcrb1c9ykifGkhSIAk6A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.20
+    dev: false
 
   /vue-router/4.0.12_vue@3.2.20:
     resolution: {integrity: sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==}
