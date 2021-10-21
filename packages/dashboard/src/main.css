@@ -9,6 +9,7 @@
 
 body {
   font-family: var(--font-sans);
+  overflow-y: overlay;
 }
 
 .ant-statistic-content {

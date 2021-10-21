@@ -23,8 +23,12 @@
 </template>
 
 <script setup lang="ts">
-import { AreaChart, AreaChartProps, TinyAreaChart } from '@opd/g2plot-vue'
-import { TinyAreaChartProps } from '@opd/g2plot-vue/lib/plots/tiny-area'
+import {
+  AreaChart,
+  AreaChartProps,
+  TinyAreaChart,
+  TinyAreaChartProps,
+} from '@opd/g2plot-vue'
 import dayjs from 'dayjs'
 import calendar from 'dayjs/plugin/calendar'
 import { computed } from 'vue'
