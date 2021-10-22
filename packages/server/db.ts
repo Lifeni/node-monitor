@@ -7,9 +7,9 @@ let prisma: PrismaClient | null = null
 export const connectToDatabase = async () => {
   try {
     prisma = new PrismaClient({})
-    log('mongo-db', '连接到 MongoDB')
+    log('db-postgres', '连接到 PostgreSQL')
   } catch (err) {
-    error('mongo-db', '连接 MongoDB 时出现错误', err)
+    error('db-postgres', '连接 PostgreSQL 时出现错误', err)
   }
 }
 
@@ -52,7 +52,7 @@ export const writeSystemInfo = async (data: ISystemInfoMessage) => {
       })
     }
   } catch (err) {
-    error('mongo-db', '写入 MongoDB 时出现错误', err)
+    error('db-postgres', '写入 PostgreSQL 时出现错误', err)
   }
 }
 
@@ -81,7 +81,7 @@ export const writeSystemLoad = async (data: ISystemLoadMessage) => {
       })
     }
   } catch (err) {
-    error('mongo-db', '写入 MongoDB 时出现错误', err)
+    error('db-postgres', '写入 PostgreSQL 时出现错误', err)
   }
 }
 
@@ -107,7 +107,7 @@ export const readAllBots = async (): Promise<
       return await prisma.systemInfo.findMany({ select })
     }
   } catch (err) {
-    error('mongo-db', '读取 MongoDB 时出现错误', err)
+    error('db-postgres', '读取 PostgreSQL 时出现错误', err)
   }
 }
 
@@ -140,7 +140,7 @@ export const readBotInfo = async (
       })
     }
   } catch (err) {
-    error('mongo-db', '读取 MongoDB 时出现错误', err)
+    error('db-postgres', '读取 PostgreSQL 时出现错误', err)
   }
 }
 
@@ -186,6 +186,6 @@ export const readBotLoad = async (
       })
     }
   } catch (err) {
-    error('mongo-db', '读取 MongoDB 时出现错误', err)
+    error('db-postgres', '读取 PostgreSQL 时出现错误', err)
   }
 }

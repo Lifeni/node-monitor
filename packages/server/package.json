@@ -10,16 +10,11 @@
   "scripts": {
     "start": "ts-node --files ./server.ts",
     "dev": "nodemon --ext \"ts\" --exec \"ts-node --files ./server.ts\"",
-    "build": "esbuild ./server.ts --bundle --platform=node --outfile=./dist/bundle/server.js --minify",
+    "build": "esbuild ./server.ts --bundle --platform=node --outfile=./dist/bundle/server.js",
     "build:docker": "npm run build && docker build -t server .",
-    "build:pkg": "npm run build && pkg .",
     "check": "tsc --noEmit",
     "prisma:generate": "pnpx prisma generate",
     "prisma:init": "npx prisma migrate dev --name init"
-  },
-  "pkg": {
-    "scripts": "./dist/bundle/server.js",
-    "outputPath": "./dist/app"
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
@@ -32,7 +27,6 @@
     "@types/node": "^16.11.2",
     "esbuild": "^0.13.7",
     "nodemon": "^2.0.13",
-    "pkg": "^5.3.3",
     "prisma": "^3.2.1",
     "ts-node": "^10.3.0"
   }

@@ -7,21 +7,13 @@ on:
 
 jobs:
   push-server:
-    name: Push Docker image to Docker Hub
+    name: Server
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm i -g pnpm && pnpm i
-      - run: lerna bootstrap --scope server
-      - run: lerna exec --scope server -- npx prisma generate
-      - run: lerna run --scope server build
 
       - name: Set output
         id: vars
@@ -43,7 +35,7 @@ jobs:
             lifeni/monitor-server:latest
 
   push-client:
-    name: Push Docker image to Docker Hub
+    name: Client
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
