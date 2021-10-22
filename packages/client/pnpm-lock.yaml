@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^16.11.2
   '@types/uuid': ^8.3.1
   esbuild: ^0.13.7
   nodemon: ^2.0.13
@@ -16,11 +17,12 @@ dependencies:
   uuid: 8.3.2
 
 devDependencies:
+  '@types/node': 16.11.2
   '@types/uuid': 8.3.1
   esbuild: 0.13.7
   nodemon: 2.0.13
   pkg: 5.3.3
-  ts-node: 10.3.0
+  ts-node: 10.3.0_@types+node@16.11.2
 
 packages:
 
@@ -107,6 +109,10 @@ packages:
   /@types/component-emitter/1.2.10:
     resolution: {integrity: sha512-bsjleuRKWmGqajMerkzox19aGbscQX5rmmvvXl3wlIp5gMG1HgkiwPxsN5p070fBDKTNSPgojVbuY1+HWMbFhg==}
     dev: false
+
+  /@types/node/16.11.2:
+    resolution: {integrity: sha512-w34LtBB0OkDTs19FQHXy4Ig/TOXI4zqvXS2Kk1PAsRKZ0I+nik7LlMYxckW0tSNGtvWmzB+mrCTbuEjuB9DVsw==}
+    dev: true
 
   /@types/uuid/8.3.1:
     resolution: {integrity: sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==}
@@ -1672,7 +1678,7 @@ packages:
     resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
     dev: true
 
-  /ts-node/10.3.0:
+  /ts-node/10.3.0_@types+node@16.11.2:
     resolution: {integrity: sha512-RYIy3i8IgpFH45AX4fQHExrT8BxDeKTdC83QFJkNzkvt8uFB6QJ8XMyhynYiKMLxt9a7yuXaDBZNOYS3XjDcYw==}
     hasBin: true
     peerDependencies:
@@ -1691,6 +1697,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
+      '@types/node': 16.11.2
       acorn: 8.5.0
       acorn-walk: 8.2.0
       arg: 4.1.3

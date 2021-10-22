@@ -4,6 +4,7 @@ specifiers:
   '@hapi/hapi': ^20.2.1
   '@prisma/client': ^3.2.1
   '@types/hapi__hapi': ^20.0.9
+  '@types/node': ^16.11.2
   dayjs: ^1.10.7
   esbuild: ^0.13.7
   nodemon: ^2.0.13
@@ -20,11 +21,12 @@ dependencies:
 
 devDependencies:
   '@types/hapi__hapi': 20.0.9
+  '@types/node': 16.11.2
   esbuild: 0.13.7
   nodemon: 2.0.13
   pkg: 5.3.3
   prisma: 3.2.1
-  ts-node: 10.3.0
+  ts-node: 10.3.0_@types+node@16.11.2
 
 packages:
 
@@ -407,6 +409,10 @@ packages:
 
   /@types/node/16.10.5:
     resolution: {integrity: sha512-9iI3OOlkyOjLQQ9s+itIJNMRepDhB/96jW3fqduJ2FTPQj1dJjw6Q3QCImF9FE1wmdBs5QSun4FjDSFS8d8JLw==}
+
+  /@types/node/16.11.2:
+    resolution: {integrity: sha512-w34LtBB0OkDTs19FQHXy4Ig/TOXI4zqvXS2Kk1PAsRKZ0I+nik7LlMYxckW0tSNGtvWmzB+mrCTbuEjuB9DVsw==}
+    dev: true
 
   /abbrev/1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -2014,7 +2020,7 @@ packages:
     resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
     dev: true
 
-  /ts-node/10.3.0:
+  /ts-node/10.3.0_@types+node@16.11.2:
     resolution: {integrity: sha512-RYIy3i8IgpFH45AX4fQHExrT8BxDeKTdC83QFJkNzkvt8uFB6QJ8XMyhynYiKMLxt9a7yuXaDBZNOYS3XjDcYw==}
     hasBin: true
     peerDependencies:
@@ -2033,6 +2039,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
+      '@types/node': 16.11.2
       acorn: 8.5.0
       acorn-walk: 8.2.0
       arg: 4.1.3
