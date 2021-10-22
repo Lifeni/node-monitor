@@ -1,0 +1,9 @@
+version: '3'
+services:
+  server:
+    image: lifeni/monitor-client
+    container_name: monitor-client
+    restart: always
+    environment:
+      ID: <your-name>
+      WS_URL: <your-url>

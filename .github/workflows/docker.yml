@@ -20,6 +20,7 @@ jobs:
           node-version: '14'
       - run: npm i -g pnpm && pnpm i
       - run: lerna bootstrap --scope server
+      - run: lerna exec --scope server -- npx prisma generate
       - run: lerna run --scope server build
 
       - name: Set output

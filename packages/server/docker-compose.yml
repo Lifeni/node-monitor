@@ -1,0 +1,32 @@
+version: '3'
+services:
+  server:
+    image: lifeni/monitor-server
+    container_name: monitor-server
+    restart: always
+    networks:
+      - network
+    environment:
+      DB_URL: <your-database> # postgresql://<USERNAME>:<PASSWORD>@localhost:5432/node-monitor
+    ports:
+      - 9010:9010 # WebSocket Port
+      - 9020:9020 # HTTP Port
+    depends_on:
+      - postgres
+
+  postgres:
+    image: 'postgres'
+    container_name: monitor-db
+    restart: always
+    networks:
+      - network
+    environment:
+      POSTGRES_PASSWORD: <your-password>
+    volumes:
+      - data:/var/lib/postgres
+
+networks:
+  network:
+
+volumes:
+  data:
