@@ -20,7 +20,7 @@ jobs:
           node-version: '14'
       - run: npm i -g pnpm && pnpm i
       - run: lerna bootstrap --scope server
-      - run: lerna bootstrap --scope server build
+      - run: lerna run --scope server build
 
       - name: Set output
         id: vars
@@ -55,7 +55,7 @@ jobs:
           node-version: '14'
       - run: npm i -g pnpm && pnpm i
       - run: lerna bootstrap --scope client
-      - run: lerna bootstrap --scope client build
+      - run: lerna run --scope client build
 
       - name: Set output
         id: vars
