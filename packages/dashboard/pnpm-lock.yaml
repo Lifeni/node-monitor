@@ -4,6 +4,7 @@ specifiers:
   '@ant-design/icons-vue': ^6.0.1
   '@antv/g2plot': ^2.3.38
   '@opd/g2plot-vue': ^3.6.0
+  '@types/byte-size': ^8.1.0
   '@vitejs/plugin-vue': ^1.9.3
   ant-design-vue: ^3.0.0-alpha.4
   byte-size: ^8.1.0
@@ -26,6 +27,7 @@ dependencies:
   vue-router: 4.0.12_vue@3.2.20
 
 devDependencies:
+  '@types/byte-size': 8.1.0
   '@vitejs/plugin-vue': 1.9.3_vite@2.6.7
   typescript: 4.4.4
   unplugin-vue-components: 0.15.6_vite@2.6.7+vue@3.2.20
@@ -353,6 +355,10 @@ packages:
       core-js: 3.18.3
       nanopop: 2.1.0
     dev: false
+
+  /@types/byte-size/8.1.0:
+    resolution: {integrity: sha512-LCIlZh8vyx+I2fgRycE1D34c33QDppYY6quBYYoaOpQ1nGhJ/avSP2VlrAefVotjJxgSk6WkKo0rTcCJwGG7vA==}
+    dev: true
 
   /@types/d3-timer/2.0.1:
     resolution: {integrity: sha512-TF8aoF5cHcLO7W7403blM7L1T+6NF3XMyN3fxyUolq2uOcFeicG/khQg/dGxiCJWoAcmYulYN7LYSRKO54IXaA==}
