@@ -7,7 +7,7 @@ on:
 
 jobs:
   push-server:
-    name: [Server] Push Docker image to Docker Hub
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
             lifeni/monitor-server:latest
 
   push-client:
-    name: [Client] Push Docker image to Docker Hub
+    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
