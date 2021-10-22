@@ -6,13 +6,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host --port 9000",
-    "build": "vue-tsc --noEmit && vite build",
-    "build:docker": "npm run build && docker build -t dashboard .",
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
+    "build:docker": "npm run build && docker build -t monitor-dashboard .",
     "serve": "vite preview"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.0.1",
-    "@antv/g2plot": "^2.3.37",
+    "@antv/g2plot": "^2.3.38",
     "@opd/g2plot-vue": "^3.6.0",
     "ant-design-vue": "^3.0.0-alpha.4",
     "byte-size": "^8.1.0",

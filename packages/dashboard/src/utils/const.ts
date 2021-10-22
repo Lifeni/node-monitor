@@ -3,4 +3,5 @@
  * @constant
  */
 export const BASE_API =
-  process.env.NODE_ENV === 'development' ? 'http://localhost:9020' : '/api'
+  process.env.BASE_API ||
+  (process.env.NODE_ENV === 'development' ? 'http://localhost:9020' : '/api')
