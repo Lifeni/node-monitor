@@ -21,4 +21,4 @@ COPY --from=builder /app/package.json ./
 COPY --from=builder /app/pnpm-lock.yaml ./
 COPY --from=builder /app/dist/bundle/server.js ./
 
-CMD [ "node", "server.js" ]
+CMD [ "npm", "run deploy" ]

@@ -14,7 +14,8 @@
     "build:docker": "npm run build && docker build -t server .",
     "check": "tsc --noEmit",
     "prisma:generate": "pnpx prisma generate",
-    "prisma:init": "npx prisma migrate dev --name init"
+    "prisma:init": "pnpx prisma migrate dev --name init",
+    "deploy": "npx prisma migrate deploy && node server.js"
   },
   "dependencies": {
     "@hapi/hapi": "^20.2.1",
