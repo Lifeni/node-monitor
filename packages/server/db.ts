@@ -44,10 +44,8 @@ export const writeSystemInfo = async (data: ISystemInfoMessage) => {
         disk: true,
       }
 
-      await prisma.systemInfo.upsert({
-        where: { name: id },
-        update: record,
-        create: { name: id, ...record },
+      await prisma.systemInfo.create({
+        data: { name: id, ...record },
         include,
       })
     }
@@ -104,7 +102,11 @@ export const readAllBots = async (): Promise<
         os: true,
       }
 
-      return await prisma.systemInfo.findMany({ select })
+      return await prisma.systemInfo.findMany({
+        select,
+        orderBy: { time: 'desc' },
+        distinct: ['name'],
+      })
     }
   } catch (err) {
     error('db-postgres', '读取 PostgreSQL 时出现错误', err)
@@ -134,7 +136,8 @@ export const readBotInfo = async (
         disk: true,
       }
 
-      return await prisma.systemInfo.findUnique({
+      return await prisma.systemInfo.findFirst({
+        orderBy: { time: 'desc' },
         where: { name: id },
         select,
       })

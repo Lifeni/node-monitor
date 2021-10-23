@@ -80,7 +80,7 @@ const tabList = props.data.map(d => {
   }
 })
 
-const tabKey = ref(tabList[0].key || '')
+const tabKey = ref(tabList?.[0]?.key || '')
 
 const tabContent = computed(() => {
   switch (props.type) {

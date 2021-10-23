@@ -12,7 +12,7 @@ generator client {
 
 model SystemInfo {
   id       Int       @id @default(autoincrement())
-  name     String    @unique
+  name     String
   time     DateTime  @unique
   system   System    @relation(fields: [systemId], references: [id])
   os       Os        @relation(fields: [osId], references: [id])
