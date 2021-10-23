@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "负责收集系统信息的客户端",
   "main": "client.ts",
   "types": "types.d.ts",
