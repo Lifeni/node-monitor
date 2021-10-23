@@ -27,6 +27,7 @@ const startApp = async () => {
 const postData = async () => {
   // 收集并发送系统信息数据
   await postSystemInfo()
+  await postSystemLoad()
 
   // 每隔一段时间收集并发送系统负载数据
   return setInterval(async () => await postSystemLoad(), INTERVAL)

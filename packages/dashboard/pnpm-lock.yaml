@@ -2,10 +2,10 @@ lockfileVersion: 5.3
 
 specifiers:
   '@ant-design/icons-vue': ^6.0.1
-  '@antv/g2plot': ^2.3.38
+  '@antv/g2plot': ^2.3.39
   '@opd/g2plot-vue': ^3.6.0
   '@types/byte-size': ^8.1.0
-  '@types/node': ^16.11.2
+  '@types/node': ^16.11.4
   '@vitejs/plugin-vue': ^1.9.3
   ant-design-vue: ^3.0.0-alpha.4
   byte-size: ^8.1.0
@@ -19,8 +19,8 @@ specifiers:
 
 dependencies:
   '@ant-design/icons-vue': 6.0.1_vue@3.2.20
-  '@antv/g2plot': 2.3.38
-  '@opd/g2plot-vue': 3.6.0_@antv+g2plot@2.3.38+vue@3.2.20
+  '@antv/g2plot': 2.3.39
+  '@opd/g2plot-vue': 3.6.0_@antv+g2plot@2.3.39+vue@3.2.20
   ant-design-vue: 3.0.0-alpha.4_vue@3.2.20
   byte-size: 8.1.0
   dayjs: 1.10.7
@@ -29,7 +29,7 @@ dependencies:
 
 devDependencies:
   '@types/byte-size': 8.1.0
-  '@types/node': 16.11.2
+  '@types/node': 16.11.4
   '@vitejs/plugin-vue': 1.9.3_vite@2.6.7
   typescript: 4.4.4
   unplugin-vue-components: 0.15.6_vite@2.6.7+vue@3.2.20
@@ -206,8 +206,8 @@ packages:
       tslib: 2.3.1
     dev: false
 
-  /@antv/g2plot/2.3.38:
-    resolution: {integrity: sha512-3rbSRbTMWUFR30u7i8OZ3SzH2V955EDT7lHLAZKmppFtCc5HGJ0fBGbiY7uXkIKElrhZlhjK5EC7iE4XbH+m2Q==}
+  /@antv/g2plot/2.3.39:
+    resolution: {integrity: sha512-B6/b+MiUOuO3vlvY19Qt0v+3B7ds72pxESI714hzuH2niXQ35AW8GaQ7+1U6Y7Kk7btoaB2AaCyWcvZuloWoPw==}
     dependencies:
       '@antv/event-emitter': 0.1.2
       '@antv/g2': 4.1.32
@@ -325,7 +325,7 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@opd/g2plot-vue/3.6.0_@antv+g2plot@2.3.38+vue@3.2.20:
+  /@opd/g2plot-vue/3.6.0_@antv+g2plot@2.3.39+vue@3.2.20:
     resolution: {integrity: sha512-y0oKOHxH5bhq+YE4RJa9Ox7OUOk+jPMsrJDDnJqnz/8zkQChXi8y9wIPVM9E+tBYHXkObSjnK1TQQa6aaHEnXg==}
     requiresBuild: true
     peerDependencies:
@@ -337,7 +337,7 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      '@antv/g2plot': 2.3.38
+      '@antv/g2plot': 2.3.39
       core-js: 3.18.3
       vue: 3.2.20
       vue-demi: 0.11.4_vue@3.2.20
@@ -370,8 +370,8 @@ packages:
     resolution: {integrity: sha512-xZmuPTa3rlZoIbtDUyJKZQimJV3bxCmzMIO2c9Pz9afyDro6kr7R79GwcB6mRhuoPmV2p1Vb66WOJH7F886WKQ==}
     dev: false
 
-  /@types/node/16.11.2:
-    resolution: {integrity: sha512-w34LtBB0OkDTs19FQHXy4Ig/TOXI4zqvXS2Kk1PAsRKZ0I+nik7LlMYxckW0tSNGtvWmzB+mrCTbuEjuB9DVsw==}
+  /@types/node/16.11.4:
+    resolution: {integrity: sha512-TMgXmy0v2xWyuCSCJM6NCna2snndD8yvQF67J29ipdzMcsPa9u+o0tjF5+EQNdhcuZplYuouYqpc4zcd5I6amQ==}
     dev: true
 
   /@types/throttle-debounce/2.1.0:

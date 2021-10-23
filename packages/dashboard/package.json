@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.0.1",
-    "@antv/g2plot": "^2.3.38",
+    "@antv/g2plot": "^2.3.39",
     "@opd/g2plot-vue": "^3.6.0",
     "ant-design-vue": "^3.0.0-alpha.4",
     "byte-size": "^8.1.0",
@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/byte-size": "^8.1.0",
-    "@types/node": "^16.11.2",
+    "@types/node": "^16.11.4",
     "@vitejs/plugin-vue": "^1.9.3",
     "typescript": "^4.4.4",
     "unplugin-vue-components": "^0.15.6",
