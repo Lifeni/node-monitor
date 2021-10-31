@@ -9,7 +9,7 @@
       <a-row :wrap="false" :gutter="12" style="margin: 0">
         <a-statistic
           title="CPU 负载"
-          :value="`${data[data.length - 1].load.toFixed(2)}%`"
+          :value="`${props.data[data.length - 1].load.toFixed(2)}%`"
         />
         <a-col :flex="1"></a-col>
         <a-row class="row" :gutter="6">
@@ -129,7 +129,6 @@ const cpuConfig = (data: number[], index: number): TinyAreaChartProps => ({
   appendPadding: 4,
   autoFit: false,
   data: data,
-  smooth: true,
   tooltip: {
     domStyles: {
       'g2-tooltip': {

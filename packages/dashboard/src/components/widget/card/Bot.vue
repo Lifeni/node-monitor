@@ -79,4 +79,8 @@ const table = [
   align-items: center;
   justify-content: space-between;
 }
+
+.table {
+  white-space: nowrap;
+}
 </style>
