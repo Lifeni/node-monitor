@@ -185,7 +185,7 @@ export const readBotLoad = async (
         where: { name: id, time },
         select,
         take,
-        orderBy: { time: 'asc' },
+        orderBy: { time: 'desc' },
       })
     }
   } catch (err) {

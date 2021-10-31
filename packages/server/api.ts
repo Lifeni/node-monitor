@@ -80,7 +80,7 @@ export const startServer = async () => {
     handler: async ({ params, query }, h) => {
       const result = await readBotLoad(params.name, query)
       return result?.length
-        ? h.response(serialize(result)).type('application/json')
+        ? h.response(serialize(result.reverse())).type('application/json')
         : h.response({ message: '没有找到指定客户端的系统负载数据' }).code(404)
     },
   })

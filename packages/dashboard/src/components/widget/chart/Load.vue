@@ -13,7 +13,7 @@
         />
         <a-row :wrap="true" class="row">
           <a-col v-for="(d, i) in cpu" :span="6" :flex="1">
-            <tiny-area-chart v-bind="cpuConfig(i)" />
+            <tiny-area-chart v-bind="cpuConfig(d, i)" />
           </a-col>
         </a-row>
       </a-space>
@@ -113,20 +113,21 @@ const loadConfig: AreaChartProps = {
 
 const cpu = computed(() => {
   const t: number[][] = []
-  props.data.map(d => {
-    d.cpu.map((c, i) => {
-      if (Array.isArray(t[i])) t[i].push(Number(c.toFixed(2)))
-      else t[i] = []
+  props.data.map((d, i) => {
+    d.cpu.map((c, j) => {
+      if (Array.isArray(t[j])) t[j][i] = Number(c.toFixed(2))
+      else t[j] = []
     })
   })
   return t
 })
 
-const cpuConfig = (index: number): TinyAreaChartProps => ({
+const cpuConfig = (data: number[], index: number): TinyAreaChartProps => ({
   width: 120,
   height: 40,
   appendPadding: 4,
-  data: cpu.value[index],
+  autoFit: false,
+  data: data,
   smooth: true,
   tooltip: {
     domStyles: {
@@ -142,7 +143,7 @@ const cpuConfig = (index: number): TinyAreaChartProps => ({
   annotations: [
     {
       type: 'text',
-      position: ['10%', '80%'],
+      position: ['75%', '5%'],
       content: `CPU${index}`,
       style: { fontFamily: fontSans, fontWeight: 600 },
     },
@@ -169,7 +170,8 @@ const cpuConfig = (index: number): TinyAreaChartProps => ({
 }
 
 .row {
-  width: 60%;
+  width: fit-content;
+  max-width: 60%;
   margin-left: auto;
 }
 </style>
