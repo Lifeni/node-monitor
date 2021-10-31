@@ -6,7 +6,7 @@
           负载
         </a-typography-text>
       </template>
-      <a-space :size="28" class="space">
+      <a-row :size="28" class="space">
         <a-statistic
           title="CPU 负载"
           :value="`${data[data.length - 1].load.toFixed(2)}%`"
@@ -16,7 +16,7 @@
             <tiny-area-chart v-bind="cpuConfig(d, i)" />
           </a-col>
         </a-row>
-      </a-space>
+      </a-row>
       <area-chart class="chart" v-bind="loadConfig" />
     </a-card>
   </a-col>
@@ -172,6 +172,5 @@ const cpuConfig = (data: number[], index: number): TinyAreaChartProps => ({
 .row {
   width: fit-content;
   max-width: 60%;
-  margin-left: auto;
 }
 </style>
