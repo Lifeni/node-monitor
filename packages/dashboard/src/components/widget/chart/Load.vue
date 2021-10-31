@@ -6,13 +6,14 @@
           负载
         </a-typography-text>
       </template>
-      <a-row :size="28" class="space">
+      <a-row :wrap="false" :gutter="12" style="margin: 0">
         <a-statistic
           title="CPU 负载"
           :value="`${data[data.length - 1].load.toFixed(2)}%`"
         />
-        <a-row :wrap="true" class="row">
-          <a-col v-for="(d, i) in cpu" :span="6" :flex="1">
+        <a-col :flex="1"></a-col>
+        <a-row class="row" :gutter="6">
+          <a-col v-for="(d, i) in cpu" :span="6">
             <tiny-area-chart v-bind="cpuConfig(d, i)" />
           </a-col>
         </a-row>
@@ -164,14 +165,8 @@ const cpuConfig = (data: number[], index: number): TinyAreaChartProps => ({
   font-size: 0.875rem;
 }
 
-.space {
-  width: 100%;
-  justify-content: space-between;
-}
-
 .row {
   width: fit-content;
   max-width: 60%;
-  justify-content: flex-end;
 }
 </style>
