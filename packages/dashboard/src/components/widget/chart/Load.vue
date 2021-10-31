@@ -172,5 +172,6 @@ const cpuConfig = (data: number[], index: number): TinyAreaChartProps => ({
 .row {
   width: fit-content;
   max-width: 60%;
+  justify-content: flex-end;
 }
 </style>
