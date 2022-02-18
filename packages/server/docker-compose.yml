@@ -7,7 +7,7 @@ services:
     networks:
       - network
     environment:
-      DB_URL: <your-database> # postgresql://<USERNAME>:<PASSWORD>@localhost:5432/node-monitor
+      DB_URL: postgresql://postgres:password@postgres:5432/node-monitor # 如有需要，可以修改
     ports:
       - 9010:9010 # WebSocket Port
       - 9020:9020 # HTTP Port
@@ -21,7 +21,7 @@ services:
     networks:
       - network
     environment:
-      POSTGRES_PASSWORD: <your-password>
+      POSTGRES_PASSWORD: password # 如果上面改了，这里也要改
     volumes:
       - data:/var/lib/postgres
 
