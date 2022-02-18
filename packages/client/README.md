@@ -15,3 +15,11 @@
 | `ID`       | 客户端 ID             | 随机生成的 UUID       |
 | `WS_URL`   | 服务器 WebSocket 地址 | `ws://localhost:9010` |
 | `INTERVAL` | 负载数据收集间隔时间  | `5` （单位为秒）      |
+
+## 开发
+
+```shell
+pnpm i && pnpm run dev
+```
+
+客户端支持 Docker、JS、可执行程序的构建，详情可见 [package.json](package.json) 。

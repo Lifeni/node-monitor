@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="封面" src="./images/封面.webp" />
+  <img alt="封面" src="images/封面.webp" />
 </p>
 
 <h1 align="center">Node Monitor</h1>
@@ -12,17 +12,17 @@
 
 项目使用 [lerna](https://github.com/lerna/lerna) 来管理多个子项目，不同模块的详细信息进入子目录查看。
 
-| 名称     | 说明                                   | 地址                                       |
-| -------- | -------------------------------------- | ------------------------------------------ |
-| 客户端   | 负责收集系统信息并发送给服务端         | [packages/client](./packages/client)       |
-| 展示页面 | 负责读取并展示数据                     | [packages/dashboard](./packages/dashboard) |
-| 服务端   | 负责将不同客户端的数据收集并存入数据库 | [packages/server](./packages/server)       |
+| 名称     | 说明                                   | 地址                                     |
+| -------- | -------------------------------------- | ---------------------------------------- |
+| 客户端   | 负责收集系统信息并发送给服务端         | [packages/client](packages/client)       |
+| 展示页面 | 负责读取并展示数据                     | [packages/dashboard](packages/dashboard) |
+| 服务端   | 负责将不同客户端的数据收集并存入数据库 | [packages/server](packages/server)       |
 
 ## 截图
 
-![监控列表](./images/监控列表.jpg)
+![监控列表](images/监控列表.jpg)
 
-![监控状态](./images/监控状态.jpg)
+![监控状态](images/监控状态.jpg)
 
 ## 用的技术
 
@@ -52,4 +52,4 @@ pnpm i && pnpm run link
 
 ## License
 
-[MIT License](./LICENSE)
+[MIT License](LICENSE)

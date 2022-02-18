@@ -12,15 +12,34 @@
 
 ## 环境变量
 
-| 名称        | 用处                  | 默认值                                                           |
-| ----------- | --------------------- | ---------------------------------------------------------------- |
-| `WS_PORT`   | 服务器 WebSocket 端口 | `9010`                                                           |
-| `HTTP_PORT` | 服务器 HTTP 端口      | `9020`                                                           |
-| `DB_URL`    | 数据库接口地址        | `postgresql://<USERNAME>:<PASSWORD>@localhost:5432/node-monitor` |
+| 名称        | 用处                  | 默认值                                                       |
+| ----------- | --------------------- | ------------------------------------------------------------ |
+| `WS_PORT`   | 服务器 WebSocket 端口 | `9010`                                                       |
+| `HTTP_PORT` | 服务器 HTTP 端口      | `9020`                                                       |
+| `DB_URL`    | 数据库接口地址        | `postgresql://postgres:password@localhost:5432/node-monitor` |
+
+## 开发
+
+进行下面的操作之前，请先运行一个 PostgreSQL 数据库，推荐使用 [Docker](https://hub.docker.com/_/postgres) 。
+
+```shell
+docker run --name monitor-postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres
+```
+
+1. 在当前目录下，新建 `.env` 文件，填入上表中要修改的环境变量。
+
+2. 依次运行下面的命令，初始化数据库。
+
+   ```shell
+   pnpm run prisma:generate
+   pnpm run prisma:init
+   ```
+
+3. 运行 `pnpm run dev` 启动开发环境。
 
 ## 接口设计
 
-也可以看看 [`api.ts`](./api.ts) 里的注释。
+也可以看看 [`api.ts`](api.ts) 里的注释。
 
 ### `GET` `/bots`
 

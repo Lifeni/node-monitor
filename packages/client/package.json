@@ -9,7 +9,7 @@
   "bin": "./dist/bundle/client.js",
   "scripts": {
     "start": "ts-node --files ./client.ts",
-    "dev": "nodemon --ext \"ts\" --exec \"ts-node --files ./server.ts\"",
+    "dev": "nodemon --ext \"ts\" --exec \"./node_modules/.bin/ts-node --files ./client.ts\"",
     "build": "esbuild ./client.ts --bundle --platform=node --outfile=./dist/bundle/client.js --minify",
     "build:docker": "npm run build && docker build -t client .",
     "build:pkg": "npm run build && pkg .",
@@ -20,16 +20,16 @@
     "outputPath": "./dist/app"
   },
   "dependencies": {
-    "socket.io-client": "^4.4.0",
-    "systeminformation": "^5.9.17",
+    "socket.io-client": "^4.4.1",
+    "systeminformation": "^5.11.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/node": "^17.0.0",
-    "@types/uuid": "^8.3.3",
-    "esbuild": "^0.14.5",
+    "@types/node": "^17.0.18",
+    "@types/uuid": "^8.3.4",
+    "esbuild": "^0.14.22",
     "nodemon": "^2.0.15",
-    "pkg": "^5.5.1",
-    "ts-node": "^10.4.0"
+    "pkg": "^5.5.2",
+    "ts-node": "^10.5.0"
   }
 }
