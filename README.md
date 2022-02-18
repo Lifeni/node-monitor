@@ -6,7 +6,12 @@
 
 <p align="center">用 Node.js 和 Vue.js 做的系统信息收集程序</p>
 
-<br />
+<p align="center">
+<img alt="GitHub" src="https://img.shields.io/github/license/Lifeni/node-monitor">
+<a href="https://lerna.js.org/">
+<img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg">
+</a>
+</p>
 
 ## 项目结构
 
@@ -20,9 +25,13 @@
 
 ## 截图
 
-![监控列表](images/监控列表.jpg)
+主页，客户端列表页面：
 
-![监控状态](images/监控状态.jpg)
+![监控列表](images/监控列表.webp)
+
+客户端详情页面：
+
+![监控状态](images/监控状态.webp)
 
 ## 用的技术
 
