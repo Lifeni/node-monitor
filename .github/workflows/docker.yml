@@ -31,8 +31,9 @@ jobs:
           context: packages/server
           push: true
           tags: |
-            lifeni/monitor-server:${{ steps.vars.outputs.tag }}
-            lifeni/monitor-server:latest
+            lifeni/node-monitor:server-${{ steps.vars.outputs.tag }}
+            lifeni/node-monitor:server-latest
+            lifeni/node-monitor:server
 
   push-client:
     name: Client
@@ -66,5 +67,6 @@ jobs:
           context: packages/client
           push: true
           tags: |
-            lifeni/monitor-client:${{ steps.vars.outputs.tag }}
-            lifeni/monitor-client:latest
+            lifeni/node-monitor:client-${{ steps.vars.outputs.tag }}
+            lifeni/node-monitor:client-latest
+            lifeni/node-monitor:client

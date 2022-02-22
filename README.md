@@ -1,15 +1,14 @@
 <p align="center">
   <img alt="封面" src="images/封面.webp" />
 </p>
-
 <h1 align="center">Node Monitor</h1>
 
 <p align="center">用 Node.js 和 Vue.js 做的系统信息收集程序</p>
 
 <p align="center">
 <img alt="GitHub" src="https://img.shields.io/github/license/Lifeni/node-monitor">
-<a href="https://lerna.js.org/">
-<img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg">
+<a href="https://hub.docker.com/r/lifeni/node-monitor">
+<img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/lifeni/node-monitor">
 </a>
 </p>
 
@@ -58,6 +57,20 @@ pnpm i && pnpm run link
 ```
 
 运行 `server` 模块时记得添加环境变量，用于连接数据库（或者直接使用 Docker Compose）。
+
+## 部署
+
+客户端和服务端的 Docker 镜像已经上传到 [Docker Hub](https://hub.docker.com/r/lifeni/node-monitor) 中。
+
+其中，客户端使用 `client` 开头的 Tag，服务端使用 `server` 开头的 Tag。
+
+```shell
+# 服务端
+docker pull lifeni/node-monitor:server
+
+# 客户端
+docker pull lifeni/node-monitor:client
+```
 
 ## License
 
