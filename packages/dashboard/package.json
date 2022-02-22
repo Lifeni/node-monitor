@@ -1,6 +1,6 @@
 {
   "name": "dashboard",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "用 Vue 3 写的前端程序，负责读取并展示数据",
   "author": "LFN <liangfengning@foxmail.com>",
   "license": "MIT",

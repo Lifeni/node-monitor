@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "负责将不同客户端的数据收集并存入数据库的服务端",
   "main": "server.ts",
   "types": "types.d.ts",
